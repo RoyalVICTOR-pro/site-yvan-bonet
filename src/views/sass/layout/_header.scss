@@ -1,0 +1,72 @@
+.header {
+    height: 8vh;
+    background-color: $color-white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation {
+    height: 100%;
+}
+
+.logo_container {
+    margin-left: 1vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    height: 100%;
+}
+
+.logo {
+    font-family: 'Trajan';
+    color: $color-grey-dark;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-right: 1vw;
+}
+
+.separator {
+    font-size: 2rem;
+    margin-right: 1vw;
+    color: $color-grey-light-2;
+}
+
+.baseline{
+    font-size: 1.2rem;
+    color: $color-grey-dark-2;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+.menu {
+    display: flex;
+    flex-direction: rows;
+    height: 100%;
+}
+
+.menu_item {
+    list-style: none;
+    margin-right: 2vw;
+    height: 100%;
+    padding: 0 1vw;    
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+
+    &.active {
+        border-top: 3px solid $color-grey-dark;
+    }
+}
+
+.menu_item_link {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+        color: $color-grey-dark-3;
+        text-decoration: none;
+    }
+}

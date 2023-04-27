@@ -1,0 +1,115 @@
+.btn {
+    &,
+    &:link, 
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        /* 
+        Il faut spécifier sur l'état initial qu'on veut des transitions lorsque les transformations 
+        appliquées sur les hover et les active. 
+        Là on dit que les transitions doivent s'appliquer aux transformations sur toutes les propriétés possibles
+        et que ca doit durer 0,2 secondes. 
+        */
+        transition: all .2s; 
+        position: relative;
+        font-size: $default-font-size;
+
+        // Changement pour l'élément button
+        border: none;
+        cursor: pointer;
+    } 
+
+    &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 1rem 2rem rgba($color-black,.2);
+        /* 
+        Explications sur l'ombre : 
+        Première valeur est la direction sur l'axe des X
+        Deuxième valeur est la direction sur l'axe des Y, 
+        Troisième valeur est le niveau de flou
+        Quatrième valeur est la couleur (ici noir transparent à 20%)
+        */
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+    &:active, 
+    &:focus {
+        outline: none;
+        transform: translateY(-0.1rem);
+        box-shadow: 0 0.5rem 1rem rgba($color-black,.2);
+    }
+
+    &::after {
+        /* Dans un after, il faut toujours un content même si c'est vide. */
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+
+        &::after{
+            background-color: $color-white;
+        }
+    }
+
+    &--green {
+        background-color: $color-primary;
+        color: $color-white; 
+
+        &::after{
+            background-color: $color-primary;
+        }
+    }
+
+    &--animated {
+        animation: moveInBottom .5s ease-out .75s;
+    
+        /* 
+        Cette propriété ci-dessous permet de dire qu'on démarre en étant dans l'état 0% de l'animation.
+        Cela empêche de voir le bouton au chargement de la page.  
+        */
+        animation-fill-mode: backwards;
+    }
+}
+
+.btn-text {
+    &:link, 
+    &:visited {
+        background-color: $color-primary;
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: $color-grey-dark;
+        display: inline-block;
+        text-decoration: none;
+        padding: 2vh 2vw;
+    }
+
+    &:hover {
+        background-color: $color-primary;
+        color: $color-grey-dark;
+        box-shadow: 0 1rem 2rem rgba($color-black,.15);
+
+    }
+
+    &_arrow {
+        margin-left: 2vw;
+        margin-top: 1vh;
+    }
+}

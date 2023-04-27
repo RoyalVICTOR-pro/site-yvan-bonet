@@ -1,0 +1,57 @@
+
+/* Sélecteur universel pour retirer les paramètrage par défaut des navigateurs. */
+*,
+*::before, 
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;   
+}
+
+html {
+    /* 
+    Pour utiliser les rem dans les tailles, on va déclarer la font-size du root (R de REM veut dire root) 
+    En mettant 10px, c'est plus facile pour calculer ensuite car du coup 1 rem = 10px. 
+    */
+    /* font-size: 10px; */
+    /* 
+    On peut également convertir ces 10px en pourcentages. 
+    Ca sera alors un pourcentage de la taille par défaut qui est souvent 16px. 
+    */
+    font-size: 62.5%; //1rem = 10px => 10px/16px = 62.5%
+
+
+    /* 
+    Attention à l'ordre des mediaqueries, 
+    il faut mettre les plus grand largeurs en premier 
+    et les plus petites en dernier 
+    */
+    @include respond(big-desktop) {
+        font-size: 75%; //1rem = 12px => 12px/16px = 75%
+    }
+
+    @include respond(tab-land) {
+        font-size: 56.25%; //1rem = 9px => 9px/16px = 56.25%
+    }
+    
+    @include respond(tab-port) {
+        font-size: 50%; //1rem = 8px => 8px/16px = 50%
+    }
+
+}
+
+body {
+/* 
+C'est une bonne pratique de déplacer le box-sizing dans le body 
+et de dire dans le sélécteur universel 
+que pour tous les éléments le box-sizing doit être hérité. 
+Ainsi ca sera le box-sizing border-box qui sera appliqué partout. 
+*/
+box-sizing: border-box; /* box-sizing permet de dire que les paddings et les margins ne doivent pas être ajoutées aux hauteurs et largeurs des éléments cf. "Schéma Box-sizing" sur Notion */
+
+
+@include respond(tab-port) {
+    padding: 0; 
+}
+
+}

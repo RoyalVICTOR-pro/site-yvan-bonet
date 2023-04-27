@@ -1,77 +1,95 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{title}}</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <header>
-    <a href="/" class="logo">
-      {{!-- <img srcset="img/logo.png 300w, img/logo-large.png 1000w" sizes="(max-width: 900px) 20vw, (max-width:600px) 30vw, 300px" alt="Logo Yvan BONET" class="" src="img/logo-large.png"> --}}
-    </a>
-    <nav>
-      <ul class="menu">
-        <li>Domaines d'interventions
-          <ul class="submenu">
-            <li>Garde à vue</li>
-            <li>Comparution immédiate</li>
-            <li>Comparution sur reconnaissance préalable de culpabilité</li>
-            <li>Tribunal correctionnel</li>
-            <li>Mise en examen</li>
-            <li>Détention provisoire</li>
-            <li>Aménagement de peine</li>
-            <li>Cour d'assises</li>
-            <li>Contentieux disciplinaire et adminitratif</li>
-            <li>Droit pénitentiaire</li>
-          </ul>
-        </li>
-        <li>Parcours</li>
-        <li>Honoraires</li>
-        <li>Presse</li>
-        <li>Contact</li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    {{{body}}}
-  </main>
-  <footer>
-    {{!-- <img srcset="img/logo_footer.png 300w, img/logo_footer-large.png 1000w" sizes="(max-width: 900px) 20vw, (max-width:600px) 30vw, 300px" alt="Logo Yvan BONET" class="" src="img/logo_footer-large.png"> --}}
-    <div class="social_medias">
-      <a href="#">
-        {{!-- <img srcset="img/linkedin_icon.png 300w, img/linkedin_icon-large.png 1000w" sizes="(max-width: 900px) 20vw, (max-width:600px) 30vw, 300px" alt="LinkedIn Yvan BONET" class="" src="img/linkedin_icon-large.png"> --}}
-      </a>
-      <a href="#">
-        {{!-- <img srcset="img/twitter_icon.png 300w, img/twitter_icon-large.png 1000w" sizes="(max-width: 900px) 20vw, (max-width:600px) 30vw, 300px" alt="LinkedIn Yvan BONET" class="" src="img/twitter_icon-large.png"> --}}
-      </a>
-    </div>
-    <p>Pour toute urgence pénale, veuillez contacter le <a href="tel:+33624132157">06 24 13 21 57</a></p>
-    <p>Pour toute demande en droit du travail, droit des étrangers, droit de la famille ou droit des affaires, le cabinet vous redirigera vers des avocats compétents dans ces domaines.</p>
-    <div class="contact_informations">
-      <div class="address">
-        <span>A.</span> 2 bis rue des Deux Communes<br>94300 Vincennes
-      </div>
-      <div class="mobile">
-        <span>M.</span> 06 24 13 21 57
-      </div>
-      <div class="phone">
-        <span>F.</span> 01 84 10 53 40
-      </div>
-      <div class="email">
-        <span>E.</span> contact@bonetavocat.com
-      </div>
-    </div>
-    <div class="footer_bar">
-      <div class="legal">
-        <a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a>
-      </div>
-      <div class="copyright">
-        ©2023 Bonetavocat.com, tous droits réservés
-      </div>
-    </div>
-  </footer>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+        <!-- <link rel="stylesheet" href="css/icon-font.css"> -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+        
+        <title>Yvan Bonet</title>
+    </head>
+    <body>
+        <header class="header">
+          <a href="/" class="logo_container">
+            <span class="logo">Yvan Bonet</span>
+            <span class="separator">|</span>
+            <span class="baseline">Avocat</span>
+          </a>
+          <nav class="navigation">
+            <ul class="menu">
+              <li class="menu_item active"><span class="open_submenu">Domaines d'interventions</span>
+                <ul class="submenu">
+                  <li class="submenu_item">Garde à vue</li>
+                  <li class="submenu_item">Comparution immédiate</li>
+                  <li class="submenu_item">Comparution sur reconnaissance préalable de culpabilité</li>
+                  <li class="submenu_item">Tribunal correctionnel</li>
+                  <li class="submenu_item">Mise en examen</li>
+                  <li class="submenu_item">Détention provisoire</li>
+                  <li class="submenu_item">Aménagement de peine</li>
+                  <li class="submenu_item">Cour d'assises</li>
+                  <li class="submenu_item">Contentieux disciplinaire et adminitratif</li>
+                  <li class="submenu_item">Droit pénitentiaire</li>
+                </ul>
+              </li>
+              <li class="menu_item"><a href="#" class="menu_item_link">Parcours</a></li>
+              <li class="menu_item"><a href="#" class="menu_item_link">Honoraires</a></li>
+              <li class="menu_item"><a href="#" class="menu_item_link">Presse</a></li>
+              <li class="menu_item"><a href="#" class="menu_item_link">Contact</a></li>
+            </ul>
+          </nav>
+        </header>
+        <main class="main">
+          {{{body}}}
+        </main>
+        <footer class="footer">
+          <div class="footer_container">
+            <div class="footer_logo_container">
+              <span class="footer_logo">Yvan Bonet</span>
+              <span class="footer_logo_baseline">Avocat</span>
+            </div>
+            <div class="social_medias">
+              <a href="#" class="linkedin_icon">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.72823 1.44509C2.72805 1.82816 2.58415 2.19546 2.32821 2.46619C2.07226 2.73693 1.72522 2.88892 1.36343 2.88873C1.00165 2.88854 0.65475 2.73618 0.399057 2.46517C0.143364 2.19417 -0.000180722 1.82671 1.70761e-07 1.44364C0.000181063 1.06057 0.144073 0.693269 0.400022 0.422534C0.655971 0.151798 1.00301 -0.000191354 1.3648 1.80807e-07C1.72658 0.000191715 2.07348 0.152549 2.32917 0.423555C2.58486 0.694562 2.72841 1.06202 2.72823 1.44509ZM2.76915 3.95828H0.0409235V13H2.76915V3.95828ZM7.07975 3.95828H4.36516V13H7.05247V8.25526C7.05247 5.61208 10.3059 5.36654 10.3059 8.25526V13H13V7.2731C13 2.81723 8.18468 2.98333 7.05247 5.17155L7.07975 3.95828Z" fill="white"/>
+                </svg>
+              </a>
+              <a href="#" class="twitter_icon">
+                <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 1.41176C13.4847 1.65882 12.9293 1.82118 12.3537 1.89882C12.9426 1.52471 13.3977 0.931765 13.6119 0.218823C13.0564 0.571765 12.4407 0.818824 11.7916 0.96C11.2629 0.352941 10.5201 0 9.67686 0C8.10421 0 6.81931 1.35529 6.81931 3.02824C6.81931 3.26824 6.84608 3.50118 6.89293 3.72C4.51052 3.59294 2.3891 2.38588 0.977056 0.557647C0.729446 1.00235 0.58891 1.52471 0.58891 2.07529C0.58891 3.12706 1.09082 4.05882 1.86711 4.58824C1.39197 4.58824 0.950287 4.44706 0.562142 4.23529V4.25647C0.562142 5.72471 1.55258 6.95294 2.86424 7.22824C2.44313 7.34979 2.00102 7.36671 1.57266 7.27765C1.75442 7.8794 2.1104 8.40594 2.59055 8.78325C3.0707 9.16055 3.65087 9.36967 4.24952 9.38118C3.23474 10.2285 1.97686 10.6866 0.6826 10.68C0.455067 10.68 0.227533 10.6659 0 10.6376C1.27151 11.4988 2.78394 12 4.40344 12C9.67686 12 12.5746 7.38353 12.5746 3.38118C12.5746 3.24706 12.5746 3.12 12.5679 2.98588C13.13 2.56235 13.6119 2.02588 14 1.41176Z" fill="white"/>
+                </svg>
+              </a>
+            </div>
+            <p class="footer_cta">Pour toute urgence pénale, veuillez contacter le <a href="tel:+33624132157">06 24 13 21 57</a></p>
+            <p class="info">Pour toute demande en droit du travail, droit des étrangers, droit de la famille ou droit des affaires, le cabinet vous redirigera vers des avocats compétents dans ces domaines.</p>
+            <div class="contact_informations">
+              <div class="address">
+                <div class="colored-letter">A.</div> <div>2 bis rue des Deux Communes<br>94300 Vincennes</div>
+              </div>
+              <div class="mobile">
+                <span class="colored-letter">M.</span> 06 24 13 21 57
+              </div>
+              <div class="phone">
+                <span class="colored-letter">F.</span> 01 84 10 53 40
+              </div>
+              <div class="email">
+                <span class="colored-letter">E.</span> contact@bonetavocat.com
+              </div>
+            </div>
+          </div>
+          <div class="footer_bar">
+            <div class="legal">
+              <a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a>
+            </div>
+            <div class="copyright">
+              ©2023 Bonetavocat.com, tous droits réservés
+            </div>
+          </div>
+        </footer>
+    </body>
 </html>
