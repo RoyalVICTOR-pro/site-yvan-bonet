@@ -199,6 +199,9 @@ body {
   border-top: 1px solid #E8E8E8;
   border-bottom: 1px solid #E8E8E8;
   padding: 10vh 0; }
+  @media only screen and (max-width: 37.5em) {
+    .domaines h2 {
+      padding: 6vh 1vw; } }
 
 .domains_cards_container {
   display: flex;
@@ -236,6 +239,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center; }
+  .domain_card_icon {
+    width: 3vw; }
   .domain_card_text {
     padding: 3vh 0;
     height: 100%;
@@ -261,6 +266,35 @@ body {
   display: block;
   padding: 10vh 20vw;
   background-color: #FFDC22; }
+  @media only screen and (max-width: 37.5em) {
+    .confiance {
+      padding: 5vh 5vw; } }
+
+.domaine_page_bandeau {
+  height: 60vh;
+  background-color: #FFDC22;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 8vh 0; }
+  .domaine_page_bandeau_icon {
+    width: 4vw;
+    fill: #353535; }
+  .domaine_page_bandeau_title {
+    font-size: 4.8rem;
+    font-weight: 600; }
+  .domaine_page_bandeau_intro {
+    font-size: 1.6rem;
+    width: 40vw;
+    margin: 0 auto;
+    text-align: center; }
+
+.domaine_page_text {
+  font-size: 1.6rem;
+  width: 50vw;
+  margin: 0 auto;
+  padding: 10vh 0; }
 
 .btn, .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -344,7 +378,7 @@ body {
 .btn-text:hover {
   background-color: #FFDC22;
   color: #353535;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15); }
+  /* box-shadow: 0 1rem 2rem rgba($color-black,.15); */ }
 
 .btn-text_arrow {
   margin-left: 2vw;
@@ -509,6 +543,9 @@ body {
     font-size: 2.7rem;
     text-transform: uppercase;
     color: #FFF; }
+    @media only screen and (max-width: 37.5em) {
+      .footer_logo {
+        font-size: 3.6rem; } }
   .footer_logo_baseline {
     font-family: 'Montserrat';
     font-weight: 400;
@@ -516,6 +553,9 @@ body {
     text-transform: uppercase;
     color: #666;
     letter-spacing: 1rem; }
+    @media only screen and (max-width: 37.5em) {
+      .footer_logo_baseline {
+        font-size: 2.4rem; } }
   .footer_cta {
     font-weight: 300;
     font-size: 1.6rem; }
@@ -538,6 +578,10 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center; }
+  @media only screen and (max-width: 37.5em) {
+    .social_medias a svg {
+      display: block;
+      width: 3rem; } }
 
 .linkedin_icon {
   margin-right: 5vh; }
@@ -709,9 +753,6 @@ body {
   justify-content: space-between;
   align-items: center; }
 
-.navigation {
-  height: 100%; }
-
 .logo_container {
   margin-left: 1vw;
   display: flex;
@@ -731,16 +772,25 @@ body {
   font-size: 2rem;
   margin-right: 1vw;
   color: #E8E8E8; }
+  @media only screen and (max-width: 37.5em) {
+    .separator {
+      display: none; } }
 
 .baseline {
   font-size: 1.2rem;
   color: #666;
   text-transform: uppercase;
   letter-spacing: 0.5rem; }
+  @media only screen and (max-width: 37.5em) {
+    .baseline {
+      display: none; } }
+
+.navigation {
+  height: 100%; }
 
 .menu {
   display: flex;
-  flex-direction: rows;
+  flex-direction: row;
   height: 100%; }
 
 .menu_item {
@@ -758,5 +808,31 @@ body {
   color: #7B7B7B;
   text-decoration: none; }
 
-.submenu {
+.open_submenu {
+  position: relative; }
+
+.open_submenu .submenu {
   display: none; }
+
+.open_submenu:hover .submenu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #FFF;
+  top: 7.5vh;
+  left: -5px;
+  width: 20vw; }
+
+.submenu_item {
+  list-style: none; }
+  .submenu_item_link {
+    display: block;
+    padding: 1vh 1vw; }
+    .submenu_item_link:link, .submenu_item_link:visited {
+      color: #7B7B7B;
+      text-decoration: none;
+      background-color: #FFF; }
+    .submenu_item_link:hover, .submenu_item_link:active {
+      color: #FFF;
+      text-decoration: none;
+      background-color: #7B7B7B; }

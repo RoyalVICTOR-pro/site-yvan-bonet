@@ -87,6 +87,10 @@
     border-top: 1px solid $color-grey-light-2;
     border-bottom: 1px solid $color-grey-light-2;
     padding: 10vh 0;
+
+    @include respond(phone) {
+        padding: 6vh 1vw;
+    }
 }
 
 .domains_cards_container {
@@ -137,7 +141,7 @@
     }
 
     &_icon {
-
+        width: 3vw;
     }
 
     &_text {
@@ -173,4 +177,8 @@
     display: block;
     padding: 10vh 20vw;
     background-color: $color-primary;
+
+    @include respond(phone) {
+        padding: 5vh 5vw;
+    }
 }
