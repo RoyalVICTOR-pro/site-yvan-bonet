@@ -1,184 +1,193 @@
 .bandeau {
-    height: 95vh;
-    background: url('../img/image_bandeau@2x.png');
-    background-size: cover;
-    background-position: bottom;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-direction: column;
+  height: 95vh;
+  background: url('../img/image_bandeau@2x.png');
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
 
-    &_title {
-        color: $color-primary;
-        font-size: 5rem;
-        font-weight: 500;
-        text-align: center;
-        margin-bottom: 20vh;
-    }
+  &_title {
+    color: $color-primary;
+    font-size: 5rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20vh;
+  }
 
-    &_arrow {
-        margin-bottom: 10vh;
-    }
+  &_arrow {
+    margin-bottom: 10vh;
+  }
 }
 
 .presentation {
+  display: flex;
+  min-width: 768px;
+  max-width: 1200px;
+  // background-color: red;
+  margin: 0 auto;
+  padding: 100px 20px;
+  flex-direction: row;
+  justify-content: center;
+
+  &_left {
+    margin-right: 40px;
+    width: 40%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &_right {
     display: flex;
-    width: 80vw;
-    margin: 0 auto;
-    padding: 10vh 5vw;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-
-    &_left {
-        margin-right: 5vw;
-    }
-    
-    &_right {
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-    }
+    align-items: flex-start;
+    width: 60%;
+  }
 }
 
 .presentation_subtitle {
-    font-weight: 600;
-    font-size: 4rem;
-    margin-bottom: 3vh;
+  font-weight: 600;
+  font-size: 4rem;
+  margin-bottom: 3vh;
 }
 
 .presentation_text {
-    font-size: 1.8rem;
-    margin-bottom: 6vh;
+  font-size: 18px;
+  margin-bottom: 2vw;
+  padding-right: 20px;
+
+  @include respond(tab-land) {
+    font-size: 14px;
+  }
 }
 
 .cta {
-    width: 100%;
-    font-weight: 300;
-    font-size: 2.8rem;
-    text-align: center;
-    display: block;
-    border-top: 1px solid $color-grey-light-2;
-    border-bottom: 1px solid $color-grey-light-2;
-    padding: 5vh 0;
+  width: 100%;
+  font-weight: 300;
+  font-size: 2.8rem;
+  text-align: center;
+  display: block;
+  border-top: 1px solid $color-grey-light-2;
+  border-bottom: 1px solid $color-grey-light-2;
+  padding: 5vh 0;
 }
 
 .cta a {
-    text-decoration: none;
-    font-weight: 600;
-    color: $color-grey-dark;
-    display: inline-block;
-    background-color: $color-primary;
-    padding: 2vh 2vw;
-    margin: 1vw;
+  text-decoration: none;
+  font-weight: 600;
+  color: $color-grey-dark;
+  display: inline-block;
+  background-color: $color-primary;
+  padding: 2vh 2vw;
+  margin: 1vw;
 }
 
 .cta-gras {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .domaines h2 {
-    width: 100%;
-    font-weight: 300;
-    font-size: 3.6rem;
-    text-align: center;
-    display: block;
-    border-top: 1px solid $color-grey-light-2;
-    border-bottom: 1px solid $color-grey-light-2;
-    padding: 10vh 0;
+  width: 100%;
+  font-weight: 300;
+  font-size: 3.6rem;
+  text-align: center;
+  display: block;
+  border-top: 1px solid $color-grey-light-2;
+  border-bottom: 1px solid $color-grey-light-2;
+  padding: 10vh 0;
 
-    @include respond(phone) {
-        padding: 6vh 1vw;
-    }
+  @include respond(phone) {
+    padding: 6vh 1vw;
+  }
 }
 
 .domains_cards_container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 5vh 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5vh 0;
 }
 
 .domain_card {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: $color-grey-dark;
+    font-weight: 300;
+    font-size: 1.6rem;
+  }
+  &:hover,
+  &:active {
+    color: $color-grey-dark;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.6rem;
+    background-color: $color-primary;
+  }
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 280px;
+  height: 330px;
+  padding: 2vw 3vw;
+  align-items: center;
+
+  &_icon_container {
+    width: 5vw;
+    height: 5vw;
+    padding: 4vw;
+    border: 1px solid $color-grey-light;
+    background-color: $color-white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &_icon {
+    width: 3vw;
+  }
+
+  &_text {
+    padding: 3vh 0;
+    height: 100%;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
 
     &:link,
     &:visited {
-        text-decoration: none;
-        color: $color-grey-dark;
-        font-weight: 300;
-        font-size: 1.6rem;
+      text-decoration: none;
+      color: $color-grey-dark;
+      font-weight: 300;
+      font-size: 1.6rem;
     }
     &:hover,
     &:active {
-        color: $color-grey-dark;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1.6rem;
-        background-color: $color-primary;
+      text-decoration: none;
+      color: $color-grey-dark;
+      font-weight: 600;
+      font-size: 1.6rem;
     }
-
-
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 280px;
-    height: 330px;
-    padding: 2vw 3vw;
-    align-items: center;
-
-    &_icon_container {
-        width: 5vw;
-        height: 5vw;
-        padding: 4vw;
-        border: 1px solid $color-grey-light;
-        background-color: $color-white;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    &_icon {
-        width: 3vw;
-    }
-
-    &_text {
-        padding: 3vh 0;
-        height: 100%;
-        align-content: center;
-        display: flex;
-        flex-wrap: wrap;
-
-        &:link,
-        &:visited {
-            text-decoration: none;
-            color: $color-grey-dark;
-            font-weight: 300;
-            font-size: 1.6rem;
-        }
-        &:hover,
-        &:active {
-            text-decoration: none;
-            color: $color-grey-dark;
-            font-weight: 600;
-            font-size: 1.6rem;
-        }
-    }
-
+  }
 }
 
 .confiance {
-    width: 100%;
-    font-weight: 300;
-    font-size: 2.2rem;
-    text-align: center;
-    display: block;
-    padding: 10vh 20vw;
-    background-color: $color-primary;
+  width: 100%;
+  font-weight: 300;
+  font-size: 2.2rem;
+  text-align: center;
+  display: block;
+  padding: 10vh 20vw;
+  background-color: $color-primary;
 
-    @include respond(phone) {
-        padding: 5vh 5vw;
-    }
+  @include respond(phone) {
+    padding: 5vh 5vw;
+  }
 }

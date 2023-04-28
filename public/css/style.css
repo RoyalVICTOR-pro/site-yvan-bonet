@@ -146,18 +146,23 @@ body {
 
 .presentation {
   display: flex;
-  width: 80vw;
+  min-width: 768px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 10vh 5vw;
+  padding: 100px 20px;
   flex-direction: row;
   justify-content: center; }
   .presentation_left {
-    margin-right: 5vw; }
+    margin-right: 40px;
+    width: 40%; }
+    .presentation_left img {
+      width: 100%; }
   .presentation_right {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start; }
+    align-items: flex-start;
+    width: 60%; }
 
 .presentation_subtitle {
   font-weight: 600;
@@ -165,8 +170,12 @@ body {
   margin-bottom: 3vh; }
 
 .presentation_text {
-  font-size: 1.8rem;
-  margin-bottom: 6vh; }
+  font-size: 18px;
+  margin-bottom: 2vw;
+  padding-right: 20px; }
+  @media only screen and (max-width: 75em) {
+    .presentation_text {
+      font-size: 14px; } }
 
 .cta {
   width: 100%;
