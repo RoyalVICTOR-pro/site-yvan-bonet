@@ -292,7 +292,9 @@ body {
     fill: #353535; }
   .domaine_page_bandeau_title {
     font-size: 4.8rem;
-    font-weight: 600; }
+    font-weight: 600;
+    width: 60vw;
+    text-align: center; }
   .domaine_page_bandeau_intro {
     font-size: 1.6rem;
     width: 40vw;
@@ -633,6 +635,10 @@ body {
 .legal a:hover, .legal a:active {
   color: #F1E151;
   display: inline-block; }
+
+.footer-text-link {
+  text-decoration: none;
+  color: #D6D6D6; }
 
 /* .footer {
     background-color: $color-grey-dark-3;

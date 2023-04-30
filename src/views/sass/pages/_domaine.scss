@@ -1,6 +1,6 @@
 .domaine_page_bandeau {
   height: 60vh;
-  background-color: $color-primary; 
+  background-color: $color-primary;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -15,6 +15,8 @@
   &_title {
     font-size: 4.8rem;
     font-weight: 600;
+    width: 60vw;
+    text-align: center;
   }
 
   &_intro {
@@ -23,7 +25,6 @@
     margin: 0 auto;
     text-align: center;
   }
-
 }
 
 .domaine_page_text {

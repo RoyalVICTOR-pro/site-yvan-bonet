@@ -1,128 +1,133 @@
 .footer {
-    text-align: center;
-    
-    &_logo_container {
-        display: flex;
-        flex-direction: column;
-        margin-top: 8vh;
-    }
+  text-align: center;
 
-    &_logo {
-        font-family: 'Trajan';
+  &_logo_container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8vh;
+  }
+
+  &_logo {
+    font-family: 'Trajan';
+    font-weight: 600;
+    font-size: 2.7rem;
+    text-transform: uppercase;
+    color: $color-white;
+
+    @include respond(phone) {
+      font-size: 3.6rem;
+    }
+  }
+  &_logo_baseline {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: $color-grey-dark-2;
+    letter-spacing: 1rem;
+    @include respond(phone) {
+      font-size: 2.4rem;
+    }
+  }
+
+  &_cta {
+    font-weight: 300;
+    font-size: 1.6rem;
+
+    a {
+      &:link,
+      &:visited,
+      &:hover,
+      &:active {
+        text-decoration: none;
+        color: $color-primary-light;
         font-weight: 600;
-        font-size: 2.7rem;
-        text-transform: uppercase;
-        color: $color-white;
-
-        @include respond(phone) {
-            font-size: 3.6rem;
-        }
+      }
     }
-    &_logo_baseline {
-        font-family: 'Montserrat';
-        font-weight: 400;
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        color: $color-grey-dark-2;
-        letter-spacing: 1rem;
-        @include respond(phone) {
-            font-size: 2.4rem;
-        }
-    }
-
-    &_cta {
-        font-weight: 300;
-        font-size: 1.6rem;
-
-        a {
-            &:link,
-            &:visited,
-            &:hover,
-            &:active {
-                text-decoration: none;
-                color: $color-primary-light;
-                font-weight: 600;
-            }
-        }
-    }
+  }
 }
 
 .footer_container {
-    margin: 0 auto;
-    background-color: $color-grey-dark;
-    height: 70vh;
-    color: $color-grey-light;
-    padding: 0 10vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  margin: 0 auto;
+  background-color: $color-grey-dark;
+  height: 70vh;
+  color: $color-grey-light;
+  padding: 0 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .social_medias {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 
-    @include respond(phone) {
-        a svg {
-            display: block;
-            width: 3rem;
-        }
+  @include respond(phone) {
+    a svg {
+      display: block;
+      width: 3rem;
     }
+  }
 }
 
 .linkedin_icon {
-    margin-right: 5vh;
+  margin-right: 5vh;
 }
 
 .info {
-    text-align: center;
-    font-size: 1.3rem;
-    padding: 0 10vw;
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 0 10vw;
 }
 
 .contact_informations {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 2vw;
-    text-align: left;
-    font-size: 1.3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 2vw;
+  text-align: left;
+  font-size: 1.3rem;
 }
 
 .colored-letter {
-    font-weight: 600;
-    color: $color-primary-light;
-    margin-right: 1vw;
+  font-weight: 600;
+  color: $color-primary-light;
+  margin-right: 1vw;
 }
 
 .address {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .footer_bar {
-    background-color: $color-grey-darker;
-    height: 10vh;
-    color: $color-grey-light;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10vw;
+  background-color: $color-grey-darker;
+  height: 10vh;
+  color: $color-grey-light;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10vw;
 }
 
-.legal a{
-    &:link,
-    &:visited {
-        color: $color-grey-light;
-        display: inline-block;
-    }
+.legal a {
+  &:link,
+  &:visited {
+    color: $color-grey-light;
+    display: inline-block;
+  }
 
-    &:hover,
-    &:active {
-        color: $color-primary-light;
-        display: inline-block;
-    }
+  &:hover,
+  &:active {
+    color: $color-primary-light;
+    display: inline-block;
+  }
+}
+
+.footer-text-link {
+  text-decoration: none;
+  color: $color-grey-light;
 }
 
 /* .footer {
