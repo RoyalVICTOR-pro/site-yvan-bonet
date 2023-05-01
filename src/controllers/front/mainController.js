@@ -20,9 +20,7 @@ exports.getDomainPage = (req, res) => {
 };
 
 exports.getPage = (pageName) => {
-
   return (req, res) => {
-
     switch (pageName) {
       case 'mentions-legales':
       case 'politique-confidentialite':
@@ -31,15 +29,24 @@ exports.getPage = (pageName) => {
           page_title: contentData[pageName].page_title,
           page_text: contentData[pageName].page_text
         });
-        case 'parcours':
-        case 'honoraires':
-          res.status(200).render('front/mainInternalPage', {
-            title: contentData[pageName].seo_title,
-            icon_file_name: contentData[pageName].icon_file_name,
-            page_title: contentData[pageName].page_title,
-            page_intro: contentData[pageName].page_intro,
-            page_text: contentData[pageName].page_text
-          });  
+        break;
+      case 'parcours':
+        res.status(200).render('front/parcoursPage', {
+          title: contentData[pageName].seo_title,
+          icon_file_name: contentData[pageName].icon_file_name,
+          page_title: contentData[pageName].page_title,
+          page_intro: contentData[pageName].page_intro,
+          page_text: contentData[pageName].page_text
+        });  
+        break;
+      case 'honoraires':
+        res.status(200).render('front/mainInternalPage', {
+          title: contentData[pageName].seo_title,
+          icon_file_name: contentData[pageName].icon_file_name,
+          page_title: contentData[pageName].page_title,
+          page_intro: contentData[pageName].page_intro,
+          page_text: contentData[pageName].page_text
+        });  
         break;
       default:
         break;

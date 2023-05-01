@@ -1,0 +1,19 @@
+<section class="main_internal_page_bandeau">
+  {{!-- <img src="/img/{{ icon_file_name }}" alt="{{ page_title }}" class="main_internal_page_bandeau_icon">   --}}
+  <h1 class="main_internal_page_bandeau_title">{{{ page_title }}}</h1>
+  <p class="main_internal_page_bandeau_intro">
+    {{{ page_intro }}}
+  </p>
+</section>
+<section class="parcours_presentation">
+  <div class="parcours_presentation_left">
+    <img srcset="img/photo_yvan_bonet@1x.png 300w, img/photo_yvan_bonet@2x.png 1000w" sizes="(max-width: 900px) 20vw, (max-width:600px) 30vw, 300px" alt="Logo Yvan BONET" class="" src="img/photo_yvan_bonet@2x.png">
+  </div>
+  <div class="parcours_presentation_right">
+    <div class="parcours_presentation_text">
+      {{{ page_text }}}
+    </div>
+  </div>
+</section>
+{{> sectionUrgencePenale }}
+{{> sectionConfiance }} 

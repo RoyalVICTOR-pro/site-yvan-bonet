@@ -1,0 +1,42 @@
+.parcours_presentation {
+  display: flex;
+  min-width: 768px;
+  max-width: 1200px;
+  // background-color: red;
+  margin: 0 auto;
+  padding: 100px 20px;
+  flex-direction: row;
+  justify-content: center;
+
+  &_left {
+    margin-right: 40px;
+    width: 40%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 60%;
+  }
+}
+
+.parcours_presentation_subtitle {
+  font-weight: 600;
+  font-size: 4rem;
+  margin-bottom: 3vh;
+}
+
+.parcours_presentation_text {
+  font-size: 18px;
+  padding-right: 20px;
+
+  @include respond(tab-land) {
+    font-size: 14px;
+  }
+}
