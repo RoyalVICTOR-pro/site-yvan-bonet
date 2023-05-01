@@ -141,6 +141,9 @@ body {
     font-weight: 500;
     text-align: center;
     margin-bottom: 20vh; }
+    @media only screen and (max-width: 56.25em) {
+      .bandeau_title {
+        font-size: 4rem; } }
   .bandeau_arrow {
     margin-bottom: 10vh; }
 
@@ -152,9 +155,19 @@ body {
   padding: 100px 20px;
   flex-direction: row;
   justify-content: center; }
+  @media only screen and (max-width: 56.25em) {
+    .presentation {
+      flex-direction: column;
+      min-width: inherit;
+      max-width: inherit;
+      padding: 50px 20px; } }
   .presentation_left {
     margin-right: 40px;
     width: 40%; }
+    @media only screen and (max-width: 56.25em) {
+      .presentation_left {
+        margin-right: 0;
+        width: 100%; } }
     .presentation_left img {
       width: 100%; }
   .presentation_right {
@@ -163,11 +176,18 @@ body {
     justify-content: center;
     align-items: flex-start;
     width: 60%; }
+    @media only screen and (max-width: 56.25em) {
+      .presentation_right {
+        width: 100%; } }
 
 .presentation_subtitle {
   font-weight: 600;
   font-size: 4rem;
   margin-bottom: 3vh; }
+  @media only screen and (max-width: 56.25em) {
+    .presentation_subtitle {
+      font-size: 3rem;
+      margin-top: 3vh; } }
 
 .presentation_text {
   font-size: 18px;
@@ -175,7 +195,10 @@ body {
   padding-right: 20px; }
   @media only screen and (max-width: 75em) {
     .presentation_text {
-      font-size: 14px; } }
+      font-size: 14px;
+      margin-bottom: 20px;
+      /* padding-right: 20px; */
+      width: inherit; } }
 
 .cta {
   width: 100%;
@@ -186,6 +209,9 @@ body {
   border-top: 1px solid #E8E8E8;
   border-bottom: 1px solid #E8E8E8;
   padding: 5vh 0; }
+  @media only screen and (max-width: 56.25em) {
+    .cta {
+      font-size: 2.4rem; } }
 
 .cta a {
   text-decoration: none;
@@ -210,14 +236,17 @@ body {
   padding: 10vh 0; }
   @media only screen and (max-width: 37.5em) {
     .domaines h2 {
-      padding: 6vh 1vw; } }
+      padding: 6vh 1vw;
+      font-size: 3.1rem; } }
 
 .domains_cards_container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 5vh 0; }
+  padding: 5vh 0;
+  max-width: 1440px;
+  margin: 0 auto; }
 
 .domain_card {
   display: flex;
@@ -225,7 +254,7 @@ body {
   text-align: center;
   width: 280px;
   height: 330px;
-  padding: 2vw 3vw;
+  padding: 20px 10px;
   align-items: center; }
   .domain_card:link, .domain_card:visited {
     text-decoration: none;
@@ -238,10 +267,18 @@ body {
     font-weight: 600;
     font-size: 1.6rem;
     background-color: #FFDC22; }
+  @media only screen and (max-width: 56.25em) {
+    .domain_card {
+      margin-bottom: 10px; }
+      .domain_card:not(:last-child) {
+        border-bottom: 1px solid #D6D6D6; } }
   .domain_card_icon_container {
-    width: 5vw;
-    height: 5vw;
-    padding: 4vw;
+    width: 150px;
+    height: 150px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    /* padding: 40px; */
     border: 1px solid #D6D6D6;
     background-color: #FFF;
     border-radius: 50%;
@@ -249,23 +286,34 @@ body {
     justify-content: center;
     align-items: center; }
   .domain_card_icon {
-    width: 3vw; }
+    width: 60px; }
   .domain_card_text {
-    padding: 3vh 0;
     height: 100%;
     align-content: center;
     display: flex;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0; }
+    @media only screen and (max-width: 56.25em) {
+      .domain_card_text {
+        font-size: 2.5rem; } }
     .domain_card_text:link, .domain_card_text:visited {
       text-decoration: none;
       color: #353535;
       font-weight: 300;
       font-size: 1.6rem; }
+      @media only screen and (max-width: 56.25em) {
+        .domain_card_text:link, .domain_card_text:visited {
+          font-size: 2.5rem; } }
     .domain_card_text:hover, .domain_card_text:active {
       text-decoration: none;
       color: #353535;
       font-weight: 600;
       font-size: 1.6rem; }
+      @media only screen and (max-width: 56.25em) {
+        .domain_card_text:hover, .domain_card_text:active {
+          font-size: 2.5rem; } }
 
 .confiance {
   width: 100%;
@@ -582,6 +630,9 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 8vh; }
+    @media only screen and (max-width: 56.25em) {
+      .footer_logo_container {
+        margin-top: 0; } }
   .footer_logo {
     font-family: 'Trajan';
     font-weight: 600;
@@ -604,6 +655,9 @@ body {
   .footer_cta {
     font-weight: 300;
     font-size: 1.6rem; }
+    @media only screen and (max-width: 56.25em) {
+      .footer_cta {
+        font-size: 2rem; } }
     .footer_cta a:link, .footer_cta a:visited, .footer_cta a:hover, .footer_cta a:active {
       text-decoration: none;
       color: #F1E151;
@@ -618,15 +672,21 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around; }
+  @media only screen and (max-width: 56.25em) {
+    .footer_container {
+      height: 600px;
+      padding: 10px;
+      flex-direction: column; } }
 
 .social_medias {
   display: flex;
   flex-direction: row;
   justify-content: center; }
-  @media only screen and (max-width: 37.5em) {
-    .social_medias a svg {
-      display: block;
-      width: 3rem; } }
+  .social_medias a svg {
+    color: white; }
+    @media only screen and (max-width: 37.5em) {
+      .social_medias a svg {
+        width: 3rem; } }
 
 .linkedin_icon {
   margin-right: 5vh; }
@@ -643,6 +703,10 @@ body {
   padding: 0 2vw;
   text-align: left;
   font-size: 1.3rem; }
+  @media only screen and (max-width: 56.25em) {
+    .contact_informations {
+      flex-direction: column;
+      font-size: 1.6rem; } }
 
 .colored-letter {
   font-weight: 600;
@@ -661,6 +725,11 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 10vw; }
+  @media only screen and (max-width: 56.25em) {
+    .footer_bar {
+      height: auto;
+      padding: 10px;
+      flex-direction: column; } }
 
 .legal a:link, .legal a:visited {
   color: #D6D6D6;
@@ -809,6 +878,9 @@ body {
   align-items: center;
   text-decoration: none;
   height: 100%; }
+  @media only screen and (max-width: 56.25em) {
+    .logo_container {
+      margin-left: 10px; } }
 
 .logo {
   font-family: 'Trajan';
