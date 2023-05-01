@@ -23,7 +23,7 @@
           </a>
           <nav class="navigation">
             <ul class="menu">
-              <li id="menu_item_domaines" class="menu_item open_submenu active">Domaines d'interventions
+              <li id="menu_item_domaines" class="menu_item open_submenu {{#equal active_menu 'domaines'}}active{{/equal}}">Domaines d'interventions
                 <ul class="submenu">
                   <li class="submenu_item"><a href="/domaines-interventions/garde-a-vue" class="submenu_item_link">Garde à vue</a></li>
                   <li class="submenu_item"><a href="/domaines-interventions/comparution-immediate" class="submenu_item_link">Comparution immédiate</a></li>
@@ -37,10 +37,10 @@
                   <li class="submenu_item"><a href="/domaines-interventions/droit-penitentiaire" class="submenu_item_link">Droit pénitentiaire</a></li>
                 </ul>
               </li>
-              <li id="menu_item_parcours" class="menu_item"><a href="/parcours" class="menu_item_link">Parcours</a></li>
-              <li id="menu_item_honoraires" class="menu_item"><a href="/honoraires" class="menu_item_link">Honoraires</a></li>
-              {{!-- <li id="menu_item_presse" class="menu_item"><a href="#" class="menu_item_link">Presse</a></li> --}}
-              <li id="menu_item_contact" class="menu_item"><a href="mailto:contact@bonetavocat.com" class="menu_item_link">Contact</a></li>
+              <li id="menu_item_parcours" class="menu_item {{#equal active_menu 'parcours'}}active{{/equal}}"><a href="/parcours" class="menu_item_link">Parcours</a></li>
+              <li id="menu_item_honoraires" class="menu_item {{#equal active_menu 'honoraires'}}active{{/equal}}"><a href="/honoraires" class="menu_item_link">Honoraires</a></li>
+              {{!-- <li id="menu_item_presse" class="menu_item {{#equal active_menu 'presse'}}active{{/equal}}"><a href="#" class="menu_item_link">Presse</a></li> --}}
+              <li id="menu_item_contact" class="menu_item {{#equal active_menu 'contact'}}active{{/equal}}"><a href="mailto:contact@bonetavocat.com" class="menu_item_link">Contact</a></li>
             </ul>
           </nav>
         </header>

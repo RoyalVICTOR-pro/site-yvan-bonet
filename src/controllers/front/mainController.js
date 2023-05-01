@@ -11,6 +11,7 @@ exports.getHomePage = (req, res) => {
 
 exports.getDomainPage = (req, res) => {
   res.status(200).render('front/mainInternalPage', {
+    active_menu: contentData[req.params.slug].active_menu,
     seo_title: contentData[req.params.slug].seo_title,
     icon_file_name: contentData[req.params.slug].icon_file_name,
     page_title: contentData[req.params.slug].page_title,
@@ -25,6 +26,7 @@ exports.getPage = (pageName) => {
       case 'mentions-legales':
       case 'politique-confidentialite':
         res.status(200).render('front/legalPage', {
+          active_menu: contentData[pageName].active_menu,
           title: contentData[pageName].seo_title,
           page_title: contentData[pageName].page_title,
           page_text: contentData[pageName].page_text
@@ -32,6 +34,7 @@ exports.getPage = (pageName) => {
         break;
       case 'parcours':
         res.status(200).render('front/parcoursPage', {
+          active_menu: contentData[pageName].active_menu,
           title: contentData[pageName].seo_title,
           icon_file_name: contentData[pageName].icon_file_name,
           page_title: contentData[pageName].page_title,
@@ -41,6 +44,7 @@ exports.getPage = (pageName) => {
         break;
       case 'honoraires':
         res.status(200).render('front/mainInternalPage', {
+          active_menu: contentData[pageName].active_menu,
           title: contentData[pageName].seo_title,
           icon_file_name: contentData[pageName].icon_file_name,
           page_title: contentData[pageName].page_title,

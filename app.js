@@ -7,7 +7,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const exphbs = require('express-handlebars');
-// const Handlebars = require('handlebars');
+const Handlebars = require('handlebars');
 
 const AppError = require('./src/utils/appError');
 // const globalErrorHandler = require('./src/controllers/errorController');
@@ -22,6 +22,16 @@ const hbs = exphbs.create({
   defaultLayout: 'main',
   layoutsDir: __dirname + '/src/views/layouts/',
   partialsDir: __dirname + '/src/views/partials/',
+});
+
+Handlebars.registerHelper('equal', function (lvalue, rvalue, options) {
+  if (arguments.length < 3)
+    throw new Error('Handlebars Helper equal needs 2 parameters');
+  if( lvalue!=rvalue ) {
+    return options.inverse(this);
+  } else {
+    return options.fn(this);
+  }
 });
 
 app.engine('hbs', hbs.engine);
