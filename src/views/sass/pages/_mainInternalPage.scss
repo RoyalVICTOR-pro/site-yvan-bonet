@@ -1,4 +1,4 @@
-.domaine_page_bandeau {
+.main_internal_page_bandeau {
   height: 60vh;
   background-color: $color-primary;
   display: flex;
@@ -27,9 +27,13 @@
   }
 }
 
-.domaine_page_text {
+.main_internal_page_text {
   font-size: 1.6rem;
   width: 50vw;
   margin: 0 auto;
   padding: 10vh 0;
+
+  li {
+    margin-left: 40px;
+  }
 }

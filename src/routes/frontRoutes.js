@@ -8,4 +8,11 @@ router.get('/', frontMainController.getHomePage);
 
 router.get('/domaines-interventions/:slug/', frontMainController.getDomainPage);
 
+router.get('/parcours', frontMainController.getPage('parcours'));
+
+router.get('/honoraires', frontMainController.getPage('honoraires'));
+
+router.get('/mentions-legales', frontMainController.getPage('mentions-legales'));
+router.get('/politique-confidentialite', frontMainController.getPage('politique-confidentialite'));
+
 module.exports = router;
