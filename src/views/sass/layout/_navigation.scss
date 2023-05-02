@@ -1,75 +1,76 @@
 .navigation {
-    height: 100%;
+  height: 100%;
+  @include respond(tab-port) {
+    display: none;
+  }
 }
 
 .menu {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
 }
 
 .menu_item {
-    list-style: none;
-    margin-right: 2vw;
-    height: 100%;
-    padding: 0 1vw;    
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
+  list-style: none;
+  margin-right: 2vw;
+  height: 100%;
+  padding: 0 1vw;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
 
-    &.active {
-        border-top: 3px solid $color-grey-dark;
-    }
+  &.active {
+    border-top: 3px solid $color-grey-dark;
+  }
 }
 
 .menu_item_link {
-    &:link,
-    &:visited,
-    &:hover,
-    &:active {
-        color: $color-grey-dark-3;
-        text-decoration: none;
-    }
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: $color-grey-dark-3;
+    text-decoration: none;
+  }
 }
 
 .open_submenu {
-    position: relative;
+  position: relative;
 }
 
 .open_submenu .submenu {
-    display: none;
+  display: none;
 }
 
-.open_submenu:hover .submenu{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    background-color: $color-white;
-    top:7.5vh;
-    left:-5px;
-    width: 20vw;
+.open_submenu:hover .submenu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: $color-white;
+  top: 7.5vh;
+  left: -5px;
+  width: 20vw;
 }
-
-
 
 .submenu_item {
-    list-style: none;
+  list-style: none;
 
-    &_link {
-        display: block;
-        padding: 1vh 1vw;
-        &:link,
-        &:visited {
-            color: $color-grey-dark-3;
-            text-decoration: none;
-            background-color: $color-white;
-        }
-
-        &:hover,
-        &:active {
-            color: $color-white;
-            text-decoration: none;
-            background-color: $color-grey-dark-3;
-        }
+  &_link {
+    display: block;
+    padding: 1vh 1vw;
+    &:link,
+    &:visited {
+      color: $color-grey-dark-3;
+      text-decoration: none;
+      background-color: $color-white;
     }
+
+    &:hover,
+    &:active {
+      color: $color-white;
+      text-decoration: none;
+      background-color: $color-grey-dark-3;
+    }
+  }
 }
