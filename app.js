@@ -1,6 +1,5 @@
 const path = require('path');
 const express = require('express');
-const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const xss = require('xss-clean');
@@ -47,6 +46,7 @@ app.use(helmet());
 
 // Developping logging
 if (process.env.NODE_ENV === 'development') {
+  const morgan = require('morgan');
   app.use(morgan('dev'));
 }
 
