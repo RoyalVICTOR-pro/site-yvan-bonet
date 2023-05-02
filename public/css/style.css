@@ -1018,6 +1018,7 @@ display: none;
   text-decoration: none; }
 
 .mobile .navigation {
+  display: none;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -1083,6 +1084,7 @@ display: none;
   position: fixed; }
 
 .burger__checkbox:checked ~ .navigation {
+  display: block;
   opacity: 1;
   width: 100%; }
 
