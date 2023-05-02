@@ -19,6 +19,7 @@ sequelize.authenticate().then(() => {
   const app = require('./app');
 
   const PORT_TO_USE = process.env.PORT;
+  console.log("PORT_TO_USE", PORT_TO_USE);
   const server = app.listen(PORT_TO_USE, () => {
     console.log(`App running on port ${PORT_TO_USE}...`);
   });
