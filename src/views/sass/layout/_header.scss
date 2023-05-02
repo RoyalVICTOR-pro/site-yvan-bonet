@@ -48,3 +48,8 @@
     display: none;
   }
 }
+
+.navigation {
+  /* Display NONE jusqu'à que le JS mediaQueryManager soit chargé et gère cela */
+  display: none;
+}

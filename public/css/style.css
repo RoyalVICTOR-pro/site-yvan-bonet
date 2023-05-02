@@ -937,6 +937,10 @@ body {
     .baseline {
       display: none; } }
 
+.navigation {
+  /* Display NONE jusqu'à que le JS mediaQueryManager soit chargé et gère cela */
+  display: none; }
+
 .desktop .burger__checkbox {
   display: none; }
 
@@ -947,6 +951,7 @@ body {
   display: none; }
 
 .desktop .navigation {
+  display: block;
   height: 100%;
   /* @include respond(tab-port) {
 display: none;
