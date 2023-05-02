@@ -15,16 +15,22 @@
         <title>{{seo_title}}</title>
     </head>
     <body>
-        <header class="header">
+        <header class="header mobile">
           <a href="/" class="logo_container">
             <span class="logo">Yvan Bonet</span>
             <span class="separator">|</span>
             <span class="baseline">Avocat</span>
           </a>
+
+          <input type="checkbox" class="burger__checkbox" id="navi-toggle">
+          <label for="navi-toggle" class="burger__button">
+              <span class="burger__icon">&nbsp;</span>
+          </label>
+          <div class="burger__background">&nbsp;</div>
           <nav class="navigation">
             <ul class="menu">
-              <li id="menu_item_domaines" class="menu_item open_submenu {{#equal active_menu 'domaines'}}active{{/equal}}">Domaines d'interventions
-                <ul class="submenu">
+              <li id="menu_item_domaines" class="menu_item submenu {{#equal active_menu 'domaines'}}active{{/equal}}"><a href="/domaines-interventions/garde-a-vue" class="menu_item_link open_submenu">Domaines d'interventions</a>
+                <ul class="submenu_items">
                   <li class="submenu_item"><a href="/domaines-interventions/garde-a-vue" class="submenu_item_link">Garde à vue</a></li>
                   <li class="submenu_item"><a href="/domaines-interventions/comparution-immediate" class="submenu_item_link">Comparution immédiate</a></li>
                   <li class="submenu_item"><a href="/domaines-interventions/comparution-sur-reconnaissance-prealable-de-culpabilite" class="submenu_item_link">Comparution sur reconnaissance préalable de culpabilité</a></li>
