@@ -972,8 +972,6 @@ display: none;
   font-size: 1.5rem; }
   .desktop .menu_item.active {
     border-top: 3px solid #353535; }
-    .desktop .menu_item.active .submenu_items {
-      top: 7.7rem; }
 
 .desktop .menu_item_link:link, .desktop .menu_item_link:visited, .desktop .menu_item_link:hover, .desktop .menu_item_link:active {
   color: #7B7B7B;
@@ -993,6 +991,10 @@ display: none;
   top: 8rem;
   left: -5px;
   width: 20vw; }
+
+.desktop .menu_item.active.submenu:hover .submenu_items {
+  /* Petite retouche pour gérer l'espace supplémentaire crée par la présence du border-top de la rubrique active */
+  top: 7.7rem; }
 
 .desktop .submenu_item {
   list-style: none; }

@@ -34,10 +34,6 @@ display: none;
 
     &.active {
       border-top: 3px solid $color-grey-dark;
-
-      .submenu_items {
-        top: 7.7rem;
-      }
     }
   }
 
@@ -67,6 +63,11 @@ display: none;
     top: 8rem;
     left: -5px;
     width: 20vw;
+  }
+
+  .menu_item.active.submenu:hover .submenu_items {
+    /* Petite retouche pour gérer l'espace supplémentaire crée par la présence du border-top de la rubrique active */
+    top: 7.7rem;
   }
 
   .submenu_item {
