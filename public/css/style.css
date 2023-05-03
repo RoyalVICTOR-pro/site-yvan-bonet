@@ -972,6 +972,8 @@ display: none;
   font-size: 1.5rem; }
   .desktop .menu_item.active {
     border-top: 3px solid #353535; }
+    .desktop .menu_item.active .submenu_items {
+      top: 7.7rem; }
 
 .desktop .menu_item_link:link, .desktop .menu_item_link:visited, .desktop .menu_item_link:hover, .desktop .menu_item_link:active {
   color: #7B7B7B;
