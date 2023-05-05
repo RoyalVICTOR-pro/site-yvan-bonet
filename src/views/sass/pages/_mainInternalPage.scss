@@ -8,7 +8,7 @@
   padding: 8vh 0;
 
   @include respond(tab-port) {
-    height: auto;
+    height: 40vh;
   }
 
   &_icon {
@@ -16,7 +16,10 @@
     fill: $color-grey-dark;
 
     @include respond(tab-port) {
-      width: 20vw;
+      width: 6vw;
+    }
+    @include respond(phone) {
+      width: 10vw;
     }
   }
 
@@ -38,6 +41,10 @@
     width: 40vw;
     margin: 0 auto;
     text-align: center;
+
+    @include respond(tab-land) {
+      width: 80%;
+    }
 
     @include respond(tab-port) {
       width: 90%;

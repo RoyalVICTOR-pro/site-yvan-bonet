@@ -337,13 +337,16 @@ body {
   padding: 8vh 0; }
   @media only screen and (max-width: 56.25em) {
     .main_internal_page_bandeau {
-      height: auto; } }
+      height: 40vh; } }
   .main_internal_page_bandeau_icon {
     width: 4vw;
     fill: #353535; }
     @media only screen and (max-width: 56.25em) {
       .main_internal_page_bandeau_icon {
-        width: 20vw; } }
+        width: 6vw; } }
+    @media only screen and (max-width: 37.5em) {
+      .main_internal_page_bandeau_icon {
+        width: 10vw; } }
   .main_internal_page_bandeau_title {
     font-size: 4.8rem;
     font-weight: 600;
@@ -359,6 +362,9 @@ body {
     width: 40vw;
     margin: 0 auto;
     text-align: center; }
+    @media only screen and (max-width: 75em) {
+      .main_internal_page_bandeau_intro {
+        width: 80%; } }
     @media only screen and (max-width: 56.25em) {
       .main_internal_page_bandeau_intro {
         width: 90%; } }
@@ -995,6 +1001,9 @@ display: none;
 .desktop .menu_item.active.submenu:hover .submenu_items {
   /* Petite retouche pour gérer l'espace supplémentaire crée par la présence du border-top de la rubrique active  */
   top: 7.7rem; }
+  @media only screen and (max-width: 56.25em) {
+    .desktop .menu_item.active.submenu:hover .submenu_items {
+      top: 7.5rem; } }
 
 .desktop .submenu_item {
   list-style: none; }
