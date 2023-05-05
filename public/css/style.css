@@ -993,7 +993,7 @@ display: none;
   width: 20vw; }
 
 .desktop .menu_item.active.submenu:hover .submenu_items {
-  /* Petite retouche pour gérer l'espace supplémentaire crée par la présence du border-top de la rubrique active */
+  /* Petite retouche pour gérer l'espace supplémentaire crée par la présence du border-top de la rubrique active  */
   top: 7.7rem; }
 
 .desktop .submenu_item {
