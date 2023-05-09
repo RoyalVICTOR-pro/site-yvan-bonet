@@ -25,6 +25,7 @@
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.0.3",
+    "dotenv-cli": "^7.2.1",
     "express": "~4.16.1",
     "express-handlebars": "^6.0.6",
     "express-rate-limit": "^6.7.0",
@@ -36,7 +37,7 @@
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.3",
     "nodemailer": "^6.9.1",
-    "sequelize": "^6.21.3",
+    "sequelize": "^6.31.1",
     "slugify": "^1.6.5",
     "validator": "^13.9.0",
     "xss-clean": "^0.1.1"
@@ -61,7 +62,8 @@
     "parcel-bundler": "^1.12.5",
     "postcss": "^8.4.17",
     "postcss-cli": "^10.0.0",
-    "prettier": "^2.8.4"
+    "prettier": "^2.8.4",
+    "sequelize-cli": "^6.6.0"
   },
   "repository": {
     "type": "git",
