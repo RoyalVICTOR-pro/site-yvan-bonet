@@ -39,5 +39,13 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Contact',
   });
+
+  Contact.createNewContact = async (formData) => {
+    await Contact.create(formData).catch((err) => {
+      console.log('Erreur dans le model lors de la création d\'un nouveau contact : ', err);
+      return Promise.reject(err);
+    });
+    return Contact;
+  };
   return Contact;
 };
