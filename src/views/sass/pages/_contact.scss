@@ -1,0 +1,69 @@
+.contact-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  background-color: $color-grey-light-2;
+}
+
+#app {
+  min-width: 768px;
+  max-width: 1200px;
+
+  @include respond(tab-port) {
+    min-width: inherit;
+    max-width: inherit;
+    width: 90%;
+  }
+}
+
+.btn--send {
+  float: right;
+}
+
+.contact_intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5rem;
+  text-align: left;
+  font-size: 1.8rem;
+  width: 90%;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+    font-size: 1.6rem;
+    padding: 0 1rem;
+  }
+
+  .colored-letter {
+    font-weight: 600;
+    color: $color-black;
+    margin-right: 1vw;
+    width: 40%;
+    text-align: right;
+    display: inline-block;
+
+    @include respond(tab-port) {
+      width: 22%;
+    }
+  }
+
+  .contact-info-container {
+    display: inline-block;
+  }
+
+  .address,
+  .mobile,
+  .phone,
+  .email {
+    width: 100%;
+    display: flex;
+  }
+
+  .footer-text-link {
+    text-decoration: none;
+    color: $color-grey-dark;
+  }
+}

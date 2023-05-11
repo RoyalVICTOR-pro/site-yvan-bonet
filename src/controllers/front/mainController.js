@@ -1,4 +1,8 @@
-const contentData = require('../../data/content.json');
+const contentData = require('../../content/data.json');
+const db = require('../../models/index');
+const ContactModel = require('../../models/contact');
+const Contact = ContactModel(db.sequelize, db.Sequelize);
+
 // const exphbs = require('express-handlebars');
 
 exports.getHomePage = (req, res) => {
@@ -65,4 +69,21 @@ exports.getContactPage = (req, res) => {
     icon_file_name: contentData.contact.icon_file_name,
     page_title: contentData.contact.page_title
   });
+};
+
+exports.receiveNewContact = async (req, res) => {
+  // TODO: Faire le contrôle des datas recues. 
+  // TODO: Empécher les injections SQL
+
+  try {
+    const newContact = await Contact.createNewContact(req.body);
+    res.status(201).json({
+      status: 'success',
+      data: newContact,
+    });
+  } catch (err) {
+    console.log('error lors de la création de contact :>> ', err);
+  }
+  
+
 };
