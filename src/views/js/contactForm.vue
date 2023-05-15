@@ -13,7 +13,9 @@
 <script>
 import BaseInput from './components/BaseInput.vue';
 import BaseTextarea from './components/BaseTextarea.vue';
+import contactConfirm from './contactConfirm.vue';
 import axios from 'axios';
+
 
 export default {
   data() {
@@ -29,18 +31,21 @@ export default {
   },
   components: { BaseInput, BaseTextarea },
   methods: {
-    sendForm() {
-      axios
-        .post(
-          '/contact',
-          this.contact
-        )
-        .then(function (response) {
-          console.log('Response', response)
-        })
-        .catch(function (error) {
-          console.log('Error', error)
-        })
+    sendForm () {
+      console.log('this.$router :>> ', this.$router);
+      this.$router.push({ name: 'contactConfirm' });
+      // axios
+      //   .post(
+      //     '/contact',
+      //     this.contact
+      //   )
+      //   .then(function (response) {
+      //     console.log('Response', response);
+      //     this.$router.push({ name: 'contactConfirm' });
+      //   })
+      //   .catch(function (error) {
+      //     console.log('Error', error)
+      //   })
     }
   }
 };

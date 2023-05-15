@@ -50,6 +50,7 @@
     "validator": "^13.9.0",
     "vue": "^3.2.47",
     "vue-loader": "^17.0.1",
+    "vue-router": "^4.2.0",
     "vueify": "^9.4.1",
     "xss-clean": "^0.1.1"
   },

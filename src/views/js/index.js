@@ -4,6 +4,7 @@ import { createApp } from 'vue';
 import contactFormApp from './contactForm.vue';
 import upperFirst from 'lodash/upperFirst';
 import camelCase from 'lodash/camelCase';
+import router from './router';
 
 // MEDIA QUERY MANAGEMENT FOR MOBILE MENU
 const mediaQuery = window.matchMedia('(min-width: 768px)');
@@ -29,5 +30,4 @@ const contactForm = createApp(contactFormApp);
 
 //   contactForm.component(componentName, componentConfig.default || componentConfig);
 // });
-
-contactForm.mount('#app'); 
+contactForm.use(router).mount('#app'); 
