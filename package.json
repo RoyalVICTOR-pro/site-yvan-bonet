@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "@parcel/transformer-sass": "^2.8.3",
     "axios": "^0.27.2",
     "bcrypt": "^5.0.1",
     "blueimp-md5": "^2.19.0",
@@ -55,6 +56,7 @@
     "xss-clean": "^0.1.1"
   },
   "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
     "@parcel/transformer-vue": "^2.0.0-rc.0",
     "@vue/compiler-sfc": "^3.2.47",
     "autoprefixer": "^10.4.12",

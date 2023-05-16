@@ -11,11 +11,10 @@
 </template>
 
 <script>
-import BaseInput from './components/BaseInput.vue';
-import BaseTextarea from './components/BaseTextarea.vue';
-import contactConfirm from './contactConfirm.vue';
+import BaseInput from '../components/BaseInput.vue';
+import BaseTextarea from '../components/BaseTextarea.vue';
 import axios from 'axios';
-
+import { useRouter } from 'vue-router'
 
 export default {
   data() {
@@ -31,21 +30,19 @@ export default {
   },
   components: { BaseInput, BaseTextarea },
   methods: {
-    sendForm () {
-      console.log('this.$router :>> ', this.$router);
-      this.$router.push({ name: 'contactConfirm' });
-      // axios
-      //   .post(
-      //     '/contact',
-      //     this.contact
-      //   )
-      //   .then(function (response) {
-      //     console.log('Response', response);
-      //     this.$router.push({ name: 'contactConfirm' });
-      //   })
-      //   .catch(function (error) {
-      //     console.log('Error', error)
-      //   })
+    sendForm () {      
+      axios
+        .post(
+          '/contact',
+          this.contact
+        )
+        .then((response) => {
+          console.log('Response', response);
+          this.$router.push({ name: 'contactConfirm' }); 
+        })
+        .catch((error) => {
+          console.log('Error', error)
+        })
     }
   }
 };

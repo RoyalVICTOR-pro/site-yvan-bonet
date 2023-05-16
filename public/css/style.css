@@ -481,6 +481,22 @@ body {
     text-decoration: none;
     color: #353535; }
 
+.confirmation_container {
+  text-align: center;
+  font-size: 1.8rem; }
+  .confirmation_container h2 {
+    font-size: 2.4rem; }
+  .confirmation_container a:link, .confirmation_container a:visited {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 300;
+    font-size: 1.6rem; }
+  .confirmation_container a:hover, .confirmation_container a:active {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 1.6rem; }
+
 .btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
