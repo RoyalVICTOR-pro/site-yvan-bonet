@@ -14,7 +14,6 @@
 import BaseInput from '../components/BaseInput.vue';
 import BaseTextarea from '../components/BaseTextarea.vue';
 import axios from 'axios';
-import { useRouter } from 'vue-router'
 
 export default {
   data() {

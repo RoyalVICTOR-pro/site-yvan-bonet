@@ -21,7 +21,8 @@
     "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
     "debug": "ndb server.js",
     "watch:js": "parcel watch ./src/views/js/index.js --dist-dir ./public/js",
-    "build:js": "parcel build"
+    "build:js": "parcel build",
+    "build": "webpack"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
@@ -50,7 +51,7 @@
     "slugify": "^1.6.5",
     "validator": "^13.9.0",
     "vue": "^3.2.47",
-    "vue-loader": "^17.0.1",
+    "vue-loader": "^17.1.1",
     "vue-router": "^4.2.0",
     "vueify": "^9.4.1",
     "xss-clean": "^0.1.1"
@@ -58,7 +59,7 @@
   "devDependencies": {
     "@parcel/transformer-image": "^2.0.0-rc.0",
     "@parcel/transformer-vue": "^2.0.0-rc.0",
-    "@vue/compiler-sfc": "^3.2.47",
+    "@vue/compiler-sfc": "^3.3.2",
     "autoprefixer": "^10.4.12",
     "concat": "^1.0.3",
     "connect-livereload": "^0.6.1",
@@ -78,7 +79,9 @@
     "postcss": "^8.4.17",
     "postcss-cli": "^10.0.0",
     "prettier": "^2.8.4",
-    "sequelize-cli": "^6.6.0"
+    "sequelize-cli": "^6.6.0",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1"
   },
   "repository": {
     "type": "git",
