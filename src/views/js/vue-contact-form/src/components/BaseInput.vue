@@ -4,6 +4,7 @@
       v-bind="$attrs"
       :placeholder="label"
       class="field form__input"
+      :class="[(isError > 0) ? 'input-error-style' : '']"
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
     />
@@ -21,6 +22,10 @@ export default {
     modelValue: {
       type: [String, Number],
       default: ''
+    },
+    isError: {
+      type: Number,
+      default: 0
     }
   }
 }
