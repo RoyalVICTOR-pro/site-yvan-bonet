@@ -20,4 +20,4 @@ import { createApp } from 'vue';
 import App from './vue-contact-form/src/App.vue';
 import router from './vue-contact-form/src/router';
 
-createApp(App).use(router).mount('#app'); 
+createApp(App).use(router).mount('#app');

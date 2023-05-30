@@ -1,32 +1,33 @@
 <template>
   <form @submit.prevent="sendForm" class="form">
-    <BaseInput v-model="contact.prenom" label="Prénom" type="text"/>
-    <div class="input-errors" v-for="(error, index) of v$.nom.$errors" :key="index">
-      <div class="error-msg">{{ error.$message }}</div>
+    <div class="form__group">
+      <input v-model="contact.prenom" type="text" placeholder="Prénom" class="field form__input"/>
+      <label class="form__label">Prénom</label>
     </div>
-    <BaseInput v-model="contact.nom" label="Nom *" type="text" isError="{{v$.nom.$errors.length}}"/>
-    <div class="input-errors" v-for="(error, index) of v$.email.$errors" :key="index">
-      <div class="error-msg">{{ error.$message }}</div>
+    <div class="form__group">
+      <input v-model="contact.nom" type="text" placeholder="Nom *" class="field form__input"/>
+      <label class="form__label">Nom *</label> 
     </div>
-    <BaseInput v-model="contact.email" label="Email *" type="email" isError="{{v$.email.$errors.length}}"/>
-    <BaseInput v-model="contact.telephone" label="Téléphone" type="text" />
-    <BaseTextarea v-model="contact.message" label="Message *"/>
-
+    <div class="form__group">
+      <input v-model="contact.email" type="email" placeholder="Email *" class="field form__input"/>
+      <label class="form__label">Email *</label>
+    </div>
+    <div class="form__group">
+      <input v-model="contact.telephone" type="text" placeholder="Téléphone" class="field form__input"/>
+      <label class="form__label">Téléphone</label>
+    </div>
+    <div class="form__group">
+      <textarea v-model="contact.message" placeholder="Message *" class="field form__textarea"></textarea>
+      <label class="form__label">Message *</label>
+    </div>
     <button class="btn btn--primary btn--send" type="submit">Send</button>
   </form>
 </template>
 
 <script>
-import BaseInput from '../components/BaseInput.vue';
-import BaseTextarea from '../components/BaseTextarea.vue';
 import axios from 'axios';
-import useVuelidate from '@vuelidate/core'
-import { required, email, helpers } from '@vuelidate/validators'
 
 export default {
-  setup () {
-    return { v$: useVuelidate() }
-  },
   data () {
     return {
       contact: {
@@ -38,27 +39,8 @@ export default {
       },
     };
   },
-  validations() {
-    return {
-      nom: {
-        required: helpers.withMessage('Merci de renseigner votre nom.', required)
-      },
-      email: {
-        required: helpers.withMessage('Merci de renseigner votre email.', required), 
-        email:  helpers.withMessage('Votre email n\'est pas valide', email),
-      },
-    }
-  },
-  components: { BaseInput, BaseTextarea },
   methods: {
     async sendForm () {
-      const result = await this.v$.$validate();
-      console.log('result :>> ', result);
-      if (!result) {
-        console.debug(this.$v);
-        // notify user form is invalid
-        return
-      }
       axios
         .post(
           '/contact',
