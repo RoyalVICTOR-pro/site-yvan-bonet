@@ -72,8 +72,41 @@ exports.getContactPage = (req, res) => {
 };
 
 exports.receiveNewContact = async (req, res) => {
-  // TODO: Faire le contrôle des datas recues. 
+  // TODO: Faire le contrôle des datas recues.
   // TODO: Empécher les injections SQL
+
+  if (!req.body.nom.trim()) {
+    return res.status(400).json({
+      status: 'fail',
+      message: 'Erreur : le champ nom est obligatoire.',
+      data: req.body,
+    });
+  }
+
+  if (!req.body.email.trim()) {
+    return res.status(400).json({
+      status: 'fail',
+      message: 'Erreur : le champ email est obligatoire.',
+      data: req.body,
+    });
+  }
+  
+  const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+  if (!regex.test(req.body.email.trim())) {
+    return res.status(400).json({
+      status: 'fail',
+      message: 'Erreur : l\'email n\'est pas valide.',
+      data: req.body,
+    });
+  }
+
+  if (!req.body.message.trim()) {
+    return res.status(400).json({
+      status: 'fail',
+      message: 'Erreur : le champ message est obligatoire.',
+      data: req.body,
+    });
+  }
 
   try {
     const newContact = await Contact.createNewContact(req.body);
@@ -82,7 +115,7 @@ exports.receiveNewContact = async (req, res) => {
       data: newContact,
     });
   } catch (err) {
-    console.log('error lors de la création de contact :>> ', err);
+    console.log(err);
   }
   
 

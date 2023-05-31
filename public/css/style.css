@@ -500,6 +500,21 @@ body {
 .input-error-style {
   border: 1px solid red !important; }
 
+.error-message {
+  color: red;
+  font-weight: 600; }
+
+.error-message-box {
+  display: block;
+  background-color: rgba(255, 0, 0, 0.7);
+  border: 1px solid #bc0000;
+  padding: 5px 10px;
+  width: 90%;
+  margin: 1.5rem auto;
+  color: #fff;
+  text-align: center;
+  font-weight: 300; }
+
 .btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;

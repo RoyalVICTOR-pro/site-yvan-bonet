@@ -3,3 +3,9 @@
   * (c) 2023 Eduardo San Martin Morote
   * @license MIT
   */
+
+/**
+  * vee-validate v4.9.5
+  * (c) 2023 Abdelrahman Awad
+  * @license MIT
+  */
