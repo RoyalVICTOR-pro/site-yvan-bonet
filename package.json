@@ -45,7 +45,7 @@
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "mysql2": "^2.3.3",
-    "nodemailer": "^6.9.1",
+    "nodemailer": "^6.9.3",
     "parcel": "^2.0.0-rc.0",
     "sequelize": "^6.31.1",
     "slugify": "^1.6.5",

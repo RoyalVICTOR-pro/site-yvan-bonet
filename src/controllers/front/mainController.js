@@ -1,7 +1,20 @@
+require('dotenv').config({ path: __dirname + '/../../../config.env', debug: true });
+const nodemailer = require('nodemailer');
 const contentData = require('../../content/data.json');
 const db = require('../../models/index');
 const ContactModel = require('../../models/contact');
 const Contact = ContactModel(db.sequelize, db.Sequelize);
+
+console.log('infos emails', process.env.EMAIL_HOST);
+
+const mailTransporter = nodemailer.createTransport({
+  host: process.env.EMAIL_HOST,
+  port: process.env.EMAIL_PORT,
+  auth: {
+    user: process.env.EMAIL_USERNAME,
+    pass: process.env.EMAIL_PASSWORD
+  }
+});
 
 // const exphbs = require('express-handlebars');
 
@@ -72,9 +85,8 @@ exports.getContactPage = (req, res) => {
 };
 
 exports.receiveNewContact = async (req, res) => {
-  // TODO: Faire le contrôle des datas recues.
-  // TODO: Empécher les injections SQL
 
+  // DATA VALIDATION
   if (!req.body.nom.trim()) {
     return res.status(400).json({
       status: 'fail',
@@ -108,8 +120,51 @@ exports.receiveNewContact = async (req, res) => {
     });
   }
 
-  try {
+  // EMAIL PREPARING
+  let messageConfiguration = {
+    from: 'contact@bonetavocat.com',
+    to: 'contact@bonetavocat.com',
+    cc: 'royal.victor.pro@gmail.com',
+    subject: 'Nouveau contact par le site - Bonetavocat.com',
+    html: `<html>
+            <body>
+              <table>
+                <tr>
+                  <td><b>Prénom : </b></td>
+                  <td>${req.body.prenom}</td>
+                </tr>
+                <tr>
+                  <td><b>Nom : </b></td>
+                  <td>${req.body.nom}</td>
+                </tr>
+                <tr>
+                  <td><b>Email : </b></td>
+                  <td>${req.body.email}</td>
+                </tr>
+                <tr>
+                  <td><b>Téléphone : </b></td>
+                  <td>${req.body.telephone}</td>
+                </tr>
+                <tr>
+                  <td colspan="2"><b>Message : </b></td>
+                </tr>
+                <tr>
+                  <td colspan="2">${req.body.message}</td>
+                </tr>
+              </table>
+            </body>
+          </html>`
+  };
+
+  if (process.env.NODE_ENV === 'development') {
+    messageConfiguration.subject = 'Nouveau contact par le site - Bonetavocat.com - Dev Mode';
+    messageConfiguration.to = 'royal.victor.pro@gmail.com';
+    messageConfiguration.cc = '';
+  }
+
+  try { 
     const newContact = await Contact.createNewContact(req.body);
+    await mailTransporter.sendMail(messageConfiguration);
     res.status(201).json({
       status: 'success',
       data: newContact,
@@ -117,6 +172,5 @@ exports.receiveNewContact = async (req, res) => {
   } catch (err) {
     console.log(err);
   }
-  
 
 };
