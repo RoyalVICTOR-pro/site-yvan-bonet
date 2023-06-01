@@ -3,10 +3,10 @@ const { Sequelize } = require('sequelize');
 const dotenv = require('dotenv');
 dotenv.config({ path: './config.env' });
 
-const host = (process.env.NODE_ENV === 'development') ? process.env.LOCAL_DATABASE_HOST : process.env.PROD_DATABASE_HOST
-const database = (process.env.NODE_ENV === 'development') ? process.env.LOCAL_DATABASE_NAME : process.env.PROD_DATABASE_NAME
-const username = (process.env.NODE_ENV === 'development') ? process.env.LOCAL_DATABASE_USERNAME : process.env.PROD_DATABASE_USERNAME
-const password = (process.env.NODE_ENV === 'development') ? process.env.LOCAL_DATABASE_PASSWORD : process.env.PROD_DATABASE_PASSWORD
+const host = (process.env.NODE_ENV === 'development') ? process.env.LOCAL_DATABASE_HOST : process.env.PROD_DATABASE_HOST;
+const database = (process.env.NODE_ENV === 'development') ? process.env.LOCAL_DATABASE_NAME : process.env.PROD_DATABASE_NAME;
+const username = (process.env.NODE_ENV === 'development') ? process.env.LOCAL_DATABASE_USERNAME : process.env.PROD_DATABASE_USERNAME;
+const password = (process.env.NODE_ENV === 'development') ? process.env.LOCAL_DATABASE_PASSWORD : process.env.PROD_DATABASE_PASSWORD;
 
 const sequelize = new Sequelize(database, username, password, {
   host: host,

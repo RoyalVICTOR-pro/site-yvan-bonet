@@ -1,4 +1,4 @@
-require('dotenv').config({ path: __dirname + '/../../../config.env', debug: true });
+// require('dotenv').config({ path: __dirname + '/../../../config.env', debug: true });
 const nodemailer = require('nodemailer');
 const contentData = require('../../content/data.json');
 const db = require('../../models/index');
