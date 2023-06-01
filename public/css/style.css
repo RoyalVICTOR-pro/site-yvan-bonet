@@ -426,19 +426,107 @@ body {
     .parcours_presentation_text {
       font-size: 14px; } }
 
+.contact-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  background-color: #E8E8E8; }
+
+#app {
+  min-width: 768px;
+  max-width: 1200px; }
+  @media only screen and (max-width: 56.25em) {
+    #app {
+      min-width: inherit;
+      max-width: inherit;
+      width: 90%; } }
+
+.btn--send {
+  float: right; }
+
+.contact_intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5rem;
+  text-align: left;
+  font-size: 1.8rem;
+  width: 90%; }
+  @media only screen and (max-width: 56.25em) {
+    .contact_intro {
+      flex-direction: column;
+      font-size: 1.6rem;
+      padding: 0 1rem; } }
+  .contact_intro .colored-letter {
+    font-weight: 600;
+    color: #000;
+    margin-right: 1vw;
+    width: 40%;
+    text-align: right;
+    display: inline-block; }
+    @media only screen and (max-width: 56.25em) {
+      .contact_intro .colored-letter {
+        width: 22%; } }
+  .contact_intro .contact-info-container {
+    display: inline-block; }
+  .contact_intro .address,
+  .contact_intro .mobile,
+  .contact_intro .phone,
+  .contact_intro .email {
+    width: 100%;
+    display: flex; }
+  .contact_intro .footer-text-link {
+    text-decoration: none;
+    color: #353535; }
+
+.confirmation_container {
+  text-align: center;
+  font-size: 1.8rem; }
+  .confirmation_container h2 {
+    font-size: 2.4rem; }
+  .confirmation_container a:link, .confirmation_container a:visited {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 300;
+    font-size: 1.6rem; }
+  .confirmation_container a:hover, .confirmation_container a:active {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 1.6rem; }
+
+.input-error-style {
+  border: 1px solid red !important; }
+
+.error-message {
+  color: red;
+  font-weight: 600; }
+
+.error-message-box {
+  display: block;
+  background-color: rgba(255, 0, 0, 0.7);
+  border: 1px solid #bc0000;
+  padding: 5px 10px;
+  width: 90%;
+  margin: 1.5rem auto;
+  color: #fff;
+  text-align: center;
+  font-weight: 300; }
+
 .btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
   display: inline-block;
-  border-radius: 10rem;
   /* 
         Il faut spécifier sur l'état initial qu'on veut des transitions lorsque les transformations 
         appliquées sur les hover et les active. 
         Là on dit que les transitions doivent s'appliquer aux transformations sur toutes les propriétés possibles
         et que ca doit durer 0,2 secondes. 
         */
-  transition: all .2s;
+  transition: all 0.2s;
   position: relative;
   font-size: 1.6rem;
   border: none;
@@ -465,16 +553,15 @@ body {
 
 .btn::after {
   /* Dans un after, il faut toujours un content même si c'est vide. */
-  content: "";
+  content: '';
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 10rem;
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all .4s; }
+  transition: all 0.4s; }
 
 .btn--white {
   background-color: #FFF;
@@ -482,14 +569,14 @@ body {
   .btn--white::after {
     background-color: #FFF; }
 
-.btn--green {
+.btn--primary {
   background-color: #FFDC22;
-  color: #FFF; }
-  .btn--green::after {
+  color: #353535; }
+  .btn--primary::after {
     background-color: #FFDC22; }
 
 .btn--animated {
-  animation: moveInBottom .5s ease-out .75s;
+  animation: moveInBottom 0.5s ease-out 0.75s;
   /* 
         Cette propriété ci-dessous permet de dire qu'on démarre en étant dans l'état 0% de l'animation.
         Cela empêche de voir le bouton au chargement de la page.  
@@ -526,9 +613,9 @@ body {
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
   border-bottom: 3px solid transparent;
-  width: 90%;
+  width: 100%;
   display: block;
-  transition: all .3s; }
+  transition: all 0.3s; }
   .form__input:focus {
     outline: none;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
@@ -538,15 +625,42 @@ body {
   .form__input::-webkit-input-placeholder {
     color: #666; }
 
+.form__textarea {
+  font-size: 1.5rem;
+  font-family: inherit;
+  color: inherit;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 100%;
+  display: block;
+  transition: all 0.3s;
+  min-height: 20rem; }
+  .form__textarea:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #FFDC22; }
+  .form__textarea:focus:invalid {
+    border-bottom: 3px solid #353535; }
+  .form__textarea::-webkit-input-placeholder {
+    color: #666; }
+
 .form__label {
   font-size: 1.2rem;
   font-weight: 700;
   margin-left: 2rem;
-  margin-top: .7rem;
+  margin-top: 0.7rem;
   display: block;
-  transition: all .3s; }
+  transition: all 0.3s; }
 
 .form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem); }
+
+.form__textarea:placeholder-shown + .form__label {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-4rem); }
@@ -576,9 +690,9 @@ body {
   display: inline-block;
   position: absolute;
   left: 0;
-  top: -.4rem; }
+  top: -0.4rem; }
   .form__radio-button::after {
-    content: "";
+    content: '';
     display: block;
     height: 1.3rem;
     width: 1.3rem;

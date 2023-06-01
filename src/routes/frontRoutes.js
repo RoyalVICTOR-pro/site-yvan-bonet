@@ -15,4 +15,7 @@ router.get('/honoraires', frontMainController.getPage('honoraires'));
 router.get('/mentions-legales', frontMainController.getPage('mentions-legales'));
 router.get('/politique-confidentialite', frontMainController.getPage('politique-confidentialite'));
 
+router.get('/contact', frontMainController.getContactPage);
+router.post('/contact', frontMainController.receiveNewContact);
+
 module.exports = router;

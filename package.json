@@ -2,7 +2,12 @@
   "name": "site-yvan-bonet",
   "version": "1.0.0",
   "description": "Yvan BONET Website",
-  "main": "app.js",
+  "source": "./src/views/js/index.js",
+  "main": "./public/js/bundle.js",
+  "targets": {
+    "main": false
+  },
+  "browserslist": "> 0.25%",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:sass": "node-sass ./src/views/sass/main.scss ./public/css/style.css -w",
@@ -15,16 +20,20 @@
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.concat.css -o css/style.prefix.css",
     "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
     "debug": "ndb server.js",
-    "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js --public-url .",
-    "build:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js --public-url ."
+    "watch:js": "parcel watch ./src/views/js/index.js --dist-dir ./public/js",
+    "build:js": "parcel build",
+    "build": "webpack"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@parcel/transformer-sass": "^2.8.3",
     "axios": "^0.27.2",
     "bcrypt": "^5.0.1",
     "blueimp-md5": "^2.19.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.0.3",
+    "dotenv-cli": "^7.2.1",
     "express": "~4.16.1",
     "express-handlebars": "^6.0.6",
     "express-rate-limit": "^6.7.0",
@@ -34,14 +43,24 @@
     "hpp": "^0.2.3",
     "http-errors": "~1.6.3",
     "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
     "mysql2": "^2.3.3",
-    "nodemailer": "^6.9.1",
-    "sequelize": "^6.21.3",
+    "nodemailer": "^6.9.3",
+    "parcel": "^2.0.0-rc.0",
+    "sequelize": "^6.31.1",
     "slugify": "^1.6.5",
     "validator": "^13.9.0",
+    "vee-validate": "^4.9.5",
+    "vue": "^3.2.47",
+    "vue-loader": "^17.1.1",
+    "vue-router": "^4.2.0",
+    "vueify": "^9.4.1",
     "xss-clean": "^0.1.1"
   },
   "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
+    "@parcel/transformer-vue": "^2.0.0-rc.0",
+    "@vue/compiler-sfc": "^3.3.2",
     "autoprefixer": "^10.4.12",
     "concat": "^1.0.3",
     "connect-livereload": "^0.6.1",
@@ -58,10 +77,12 @@
     "node-sass": "^7.0.3",
     "nodemon": "^2.0.19",
     "npm-run-all": "^4.1.5",
-    "parcel-bundler": "^1.12.5",
     "postcss": "^8.4.17",
     "postcss-cli": "^10.0.0",
-    "prettier": "^2.8.4"
+    "prettier": "^2.8.4",
+    "sequelize-cli": "^6.6.0",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1"
   },
   "repository": {
     "type": "git",
