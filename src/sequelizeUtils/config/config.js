@@ -1,4 +1,4 @@
-// require('dotenv').config({path: __dirname+'/../../../config.env',debug:true});
+require('dotenv').config({path: __dirname+'/../../../config.env',debug:true});
 
 const database = process.env.LOCAL_DATABASE_NAME;
 const username = process.env.LOCAL_DATABASE_USERNAME;
