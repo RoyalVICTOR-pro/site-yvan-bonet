@@ -59,8 +59,8 @@ export default {
         )
         .then((response) => {
           console.log('Response', response);
-          if (response.status === 201) {
-            this.$router.push({ name: 'contactConfirm' }); 
+          if (response.status == 201) {
+            this.$router.push({ name: 'contactConfirm' });
           } else {
             this.errorMessage = response.message;
           }
