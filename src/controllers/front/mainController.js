@@ -164,7 +164,7 @@ exports.receiveNewContact = async (req, res) => {
 
   try { 
     const newContact = await Contact.createNewContact(req.body);
-    await mailTransporter.sendMail(messageConfiguration);
+    // await mailTransporter.sendMail(messageConfiguration);
     res.status(201).json({
       status: 'success',
       data: newContact,
