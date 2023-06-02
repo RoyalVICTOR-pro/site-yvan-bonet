@@ -66,6 +66,7 @@ export default {
           }
         })
         .catch((error) => {
+          console.log('Errorzilla ', error);
           this.errorMessage = error.response.data.message;
         })
     },
