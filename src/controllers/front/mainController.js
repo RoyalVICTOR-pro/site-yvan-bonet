@@ -82,6 +82,7 @@ exports.getPage = (pageName) => {
 };
 
 exports.getContactPage = (req, res) => {
+  console.log('TEST_EMAIL_PASSWORD :>> ', TEST_EMAIL_PASSWORD);
   res.status(200).render('front/contact', {
     active_menu: contentData.contact.active_menu,
     title: contentData.contact.seo_title,
