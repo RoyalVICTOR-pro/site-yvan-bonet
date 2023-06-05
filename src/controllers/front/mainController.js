@@ -12,7 +12,7 @@ var TEST_EMAIL_HOST = process.env.EMAIL_HOST;
 var TEST_EMAIL_USERNAME = process.env.EMAIL_USERNAME;
 var TEST_EMAIL_PORT = process.env.EMAIL_PORT;
 var TEST_EMAIL_PASSWORD = process.env.EMAIL_PASSWORD;
-var TEST_EMAIL_TOTO = process.env.TOTO;
+var TEST_EMAIL_TOTO = process.env.EM_PA;
 
 const mailTransporter = nodemailer.createTransport({
   host: TEST_EMAIL_HOST,
