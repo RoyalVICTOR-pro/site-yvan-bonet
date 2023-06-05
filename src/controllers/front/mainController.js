@@ -9,7 +9,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 var TEST_EMAIL_HOST = process.env.EMAIL_HOST;
-var TEST_EMAIL_USERNAME = process.env.USERNAME;
+var TEST_EMAIL_USERNAME = process.env.EMAIL_USERNAME;
 var TEST_EMAIL_PORT = process.env.EMAIL_PORT;
 var TEST_EMAIL_PASSWORD = process.env.EMAIL_PASSWORD;
 
@@ -90,6 +90,7 @@ exports.getContactPage = (req, res) => {
     test_email_host: TEST_EMAIL_HOST,
     test_email_username: TEST_EMAIL_USERNAME,
     test_email_port: TEST_EMAIL_PORT,
+    test_email_password: TEST_EMAIL_PASSWORD,
   });
 };
 
