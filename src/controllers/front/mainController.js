@@ -80,7 +80,10 @@ exports.getContactPage = (req, res) => {
     active_menu: contentData.contact.active_menu,
     title: contentData.contact.seo_title,
     icon_file_name: contentData.contact.icon_file_name,
-    page_title: contentData.contact.page_title
+    page_title: contentData.contact.page_title, 
+    test_email_host: process.env.EMAIL_HOST,
+    test_email_username: process.env.EMAIL_USERNAME,
+    test_email_port: process.env.EMAIL_PORT,
   });
 };
 
