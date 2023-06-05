@@ -5,6 +5,9 @@ const db = require('../../models/index');
 const ContactModel = require('../../models/contact');
 const Contact = ContactModel(db.sequelize, db.Sequelize);
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 var TEST_EMAIL_HOST = process.env.EMAIL_HOST;
 var TEST_EMAIL_USERNAME = process.env.USERNAME;
 var TEST_EMAIL_PORT = process.env.EMAIL_PORT;
