@@ -8,18 +8,17 @@ const Contact = ContactModel(db.sequelize, db.Sequelize);
 const dotenv = require('dotenv');
 dotenv.config();
 
-var TEST_EMAIL_HOST = process.env.EMAIL_HOST;
-var TEST_EMAIL_USERNAME = process.env.EMAIL_USERNAME;
-var TEST_EMAIL_PORT = process.env.EMAIL_PORT;
-var TEST_EMAIL_PASSWORD = process.env.EMAIL_PASSWORD;
-var TEST_EMAIL_TOTO = process.env.EM_PA;
+var EMAIL_HOST = process.env.EMAIL_HOST;
+var EMAIL_USERNAME = process.env.EMAIL_USERNAME;
+var EMAIL_PORT = process.env.EMAIL_PORT;
+var EMAIL_PASSWORD = process.env.EMAIL_PASSWORD;
 
 const mailTransporter = nodemailer.createTransport({
-  host: TEST_EMAIL_HOST,
-  port: TEST_EMAIL_PORT,
+  host: EMAIL_HOST,
+  port: EMAIL_PORT,
   auth: {
-    user: TEST_EMAIL_USERNAME,
-    pass: TEST_EMAIL_PASSWORD
+    user: EMAIL_USERNAME,
+    pass: EMAIL_PASSWORD
   }
 });
 
@@ -83,17 +82,11 @@ exports.getPage = (pageName) => {
 };
 
 exports.getContactPage = (req, res) => {
-  console.log('TEST_EMAIL_PASSWORD :>> ', TEST_EMAIL_PASSWORD);
   res.status(200).render('front/contact', {
     active_menu: contentData.contact.active_menu,
     title: contentData.contact.seo_title,
     icon_file_name: contentData.contact.icon_file_name,
-    page_title: contentData.contact.page_title, 
-    test_email_host: TEST_EMAIL_HOST,
-    test_email_username: TEST_EMAIL_USERNAME,
-    test_email_port: TEST_EMAIL_PORT,
-    test_email_toto: TEST_EMAIL_TOTO,
-    test_email_password: TEST_EMAIL_PASSWORD,
+    page_title: contentData.contact.page_title
   });
 };
 
