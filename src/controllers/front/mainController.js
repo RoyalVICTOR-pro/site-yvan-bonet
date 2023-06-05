@@ -5,14 +5,17 @@ const db = require('../../models/index');
 const ContactModel = require('../../models/contact');
 const Contact = ContactModel(db.sequelize, db.Sequelize);
 
-console.log('infos emails', process.env.EMAIL_HOST);
+var TEST_EMAIL_HOST = process.env.EMAIL_HOST;
+var TEST_EMAIL_USERNAME = process.env.USERNAME;
+var TEST_EMAIL_PORT = process.env.EMAIL_PORT;
+var TEST_EMAIL_PASSWORD = process.env.EMAIL_PASSWORD;
 
 const mailTransporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST,
-  port: process.env.EMAIL_PORT,
+  host: TEST_EMAIL_HOST,
+  port: TEST_EMAIL_PORT,
   auth: {
-    user: process.env.EMAIL_USERNAME,
-    pass: process.env.EMAIL_PASSWORD
+    user: TEST_EMAIL_USERNAME,
+    pass: TEST_EMAIL_PASSWORD
   }
 });
 
@@ -81,9 +84,9 @@ exports.getContactPage = (req, res) => {
     title: contentData.contact.seo_title,
     icon_file_name: contentData.contact.icon_file_name,
     page_title: contentData.contact.page_title, 
-    test_email_host: process.env.EMAIL_HOST,
-    test_email_username: process.env.EMAIL_USERNAME,
-    test_email_port: process.env.EMAIL_PORT,
+    test_email_host: TEST_EMAIL_HOST,
+    test_email_username: TEST_EMAIL_USERNAME,
+    test_email_port: TEST_EMAIL_PORT,
   });
 };
 
