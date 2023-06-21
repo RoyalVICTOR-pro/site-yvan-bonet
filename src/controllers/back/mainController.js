@@ -1,5 +1,22 @@
+
+exports.redirectToDefaultHomePage = (req, res, next) => {
+  return res.redirect('/admin/contacts');
+};
+
 exports.getLoginPage = (req, res, next) => {
-  res.status(200).render('login', {
+  const errorMessage = req.session.errorMessage;
+  delete req.session.errorMessage;
+
+  res.status(200).render('back/login', {
     title: 'Yvan Bonet',
+    layout: 'backMain.hbs',
+    errorMessage: errorMessage
+  });
+};
+
+exports.getContactsList = (req, res, next) => {
+  res.status(200).render('back/contacts', {
+    title: 'Yvan Bonet',
+    layout: 'backMain.hbs'
   });
 };
