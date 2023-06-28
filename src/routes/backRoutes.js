@@ -5,6 +5,13 @@ const contactsController = require('../controllers/back/contactsController.js');
 
 const router = express.Router();
 
+/* 
+ROUTES SERVANT A CREER UN UTILISATEUR ADMIN 
+A commenter pour éviter les failles de sécurité
+*/
+// router.get('/users/create', userController.getUserCreationPage);
+// router.post('/users/create', userController.createUser);
+
 // Page par défaut
 router.get('/', userController.protect, backMainController.redirectToDefaultHomePage);
 
@@ -15,9 +22,6 @@ router.get('/logout', userController.logout);
 router.use(userController.protect);
 router.use(userController.isLoggedIn);
 router.get('/contacts', contactsController.getContactsList);
-
-/* ROUTES SERVANT A CREER UN UTILISATEUR ADMIN */
-// router.get('/users/create', userController.getUserCreationPage);
-// router.post('/users/create', userController.createUser);
+router.get('/contact/:id', contactsController.getContactDetails);
 
 module.exports = router;
