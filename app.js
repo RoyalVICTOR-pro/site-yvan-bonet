@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const session = require('express-session');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const xss = require('xss-clean');
@@ -46,6 +47,7 @@ app.use(helmet());
 
 // Developping logging
 if (process.env.NODE_ENV === 'development') {
+  console.log('Development Mode with Morgan');
   const morgan = require('morgan');
   app.use(morgan('dev'));
 }
@@ -66,6 +68,7 @@ app.use('/', limiter);
 // Avec une Sécurité : on limit le poids des échanges.
 // La deuxième parse les données des cookies
 app.use(express.json({ limit: '10kb' }));
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 
@@ -83,6 +86,12 @@ app.use(
   })
 );
 
+
+app.use(session({
+  secret: process.env.JWT_SECRET,
+  resave: false,
+  saveUninitialized: false
+}));
 
 // 3) ROUTES
 app.use('/', frontRouter);

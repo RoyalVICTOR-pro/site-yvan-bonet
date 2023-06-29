@@ -1,0 +1,18 @@
+<div class="small-form-container">
+  <div class="card  h-50 mx-5 mb-5 mt-5 w-50">
+    <h5 class="card-header text-white bg-warning p-4">Espace d'administration</h5>
+    <div class="card-body">
+      <form action="/admin/users/create" method="post" class="creation-form">
+        <div class="mb-3">
+          <label for="inputEmail" class="form-label">Email </label>
+          <input type="email" class="form-control" id="inputEmail" name="inputEmail">
+        </div>
+        <div class="mb-3">
+          <label for="inputPassword" class="form-label">Mot de passe </label>
+          <input type="password" class="form-control mb-5" id="inputPassword" name="inputPassword">
+        </div>
+        <button type="submit" class="btn btn-warning text-white" style="padding: 1rem 3rem;">Créer</button>
+      </form>    
+    </div>
+  </div>
+</div>

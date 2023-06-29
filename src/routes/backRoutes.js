@@ -1,9 +1,27 @@
 const express = require('express');
 const backMainController = require('../controllers/back/mainController.js');
+const userController = require('../controllers/back/userController.js');
+const contactsController = require('../controllers/back/contactsController.js');
 
 const router = express.Router();
 
-router.get('/', backMainController.getLoginPage);
-// router.get('/domaine-intervention/:slug', viewsController.getTour);
+/* 
+ROUTES SERVANT A CREER UN UTILISATEUR ADMIN 
+A commenter pour éviter les failles de sécurité
+*/
+// router.get('/users/create', userController.getUserCreationPage);
+// router.post('/users/create', userController.createUser);
+
+// Page par défaut
+router.get('/', userController.protect, backMainController.redirectToDefaultHomePage);
+
+router.get('/login', backMainController.getLoginPage);
+router.post('/users/login', userController.login);
+router.get('/logout', userController.logout);
+
+router.use(userController.protect);
+router.use(userController.isLoggedIn);
+router.get('/contacts', contactsController.getContactsList);
+router.get('/contact/:id', contactsController.getContactDetails);
 
 module.exports = router;

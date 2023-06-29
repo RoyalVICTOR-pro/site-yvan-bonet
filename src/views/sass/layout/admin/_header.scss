@@ -1,0 +1,64 @@
+.logo_container {
+  margin-left: 1vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+
+  @include respond(tab-port) {
+    margin-left: 10px;
+  }
+}
+
+.logo {
+  font-family: 'Trajan';
+  color: $color-grey-dark;
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-right: 1vw;
+}
+
+.separator {
+  font-size: 2rem;
+  margin-right: 1vw;
+  color: $color-grey-light-2;
+
+  @include respond(phone) {
+    display: none;
+  }
+}
+
+.baseline {
+  font-size: 1.2rem;
+  color: $color-grey-dark-2;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+
+  @include respond(phone) {
+    display: none;
+  }
+}
+
+.small-form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.page-title {
+  margin: 2rem;
+  display: inline-block;
+}
+
+.main-container {
+  margin: 2rem;
+}
+
+.logout {
+  width: 20rem;
+  text-align: right;
+  margin-right: 1rem;
+}
