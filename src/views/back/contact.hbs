@@ -1,25 +1,16 @@
-<h1 class="page-title">Liste des contacts</h1>
+<div class="heading-container">
+<h1 class="page-title">Demande de contact</h1>
+<a href="/admin/contacts" class="small-btn-text">Retour à la liste</a>
+</div>
 <div class="main-container">
-  <table class="table table-striped">
-    <thead class="table-dark">
-      <tr>
-        <th class="col">Date</th>
-        <th class="col">Prénom</th>
-        <th class="col">Nom</th>
-        <th class="col">Email</th>
-        <th class="text-end"></th>
-      </tr>
-    </thead> 
+  <table class="table table-striped"> 
     <tbody>
-      {{#each contacts}}
-      <tr>
-        <td>{{{this.date}}}</td>
-        <td>{{{this.prenom}}}</td>
-        <td>{{{this.nom}}}</td>
-        <td>{{{this.email}}}</td>
-        <td class="text-end"><a href="/admin/contact/{{{this.id}}}" class="actions-icons"><i class="bi bi-eye"></i></a> {{!-- <a href="#" class="actions-icons"><i class="bi bi-trash3"></i></a> --}}</td>
-      </tr>
-      {{/each}}
+        <tr><td class="first-column-style">Date de la demande : </td><td>{{{contact.date}}}</td></tr>
+        <tr><td class="first-column-style">Prénom : </td><td>{{{contact.prenom}}}</td></tr>
+        <tr><td class="first-column-style">Nom : </td><td>{{{contact.nom}}}</td></tr>
+        <tr><td class="first-column-style">Email : </td><td>{{{contact.email}}}</td></tr>
+        <tr><td class="first-column-style">Téléphone : </td><td>{{{contact.telephone}}}</td></tr>
+        <tr><td class="first-column-style">Message : </td><td>{{{contact.message}}}</td></tr>
     </tbody>
   </table>
 </div>
