@@ -1,5 +1,6 @@
 const express = require('express');
 const frontMainController = require('../controllers/front/mainController');
+const contactController = require('../controllers/front/contactController');
 
 const router = express.Router();
 
@@ -15,7 +16,7 @@ router.get('/honoraires', frontMainController.getPage('honoraires'));
 router.get('/mentions-legales', frontMainController.getPage('mentions-legales'));
 router.get('/politique-confidentialite', frontMainController.getPage('politique-confidentialite'));
 
-router.get('/contact', frontMainController.getContactPage);
-router.post('/contact', frontMainController.receiveNewContact);
+router.get('/contact', contactController.getContactPage);
+router.post('/contact', contactController.receiveNewContact);
 
 module.exports = router;
