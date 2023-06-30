@@ -34,7 +34,18 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   Article.updateArticle = async (formData, sendedID) => {
-    await User.update(formData, {
+    console.log('formData :>> ', formData);
+    console.log('sendedID :>> ', sendedID);
+    await Article.update(formData, {
+      where: {
+        id: sendedID
+      }
+    });
+    return Article;
+  };
+  
+  Article.deleteArticle = async (sendedID) => {
+    await Article.destroy({
       where: {
         id: sendedID
       }

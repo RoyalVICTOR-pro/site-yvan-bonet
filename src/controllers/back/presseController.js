@@ -4,29 +4,34 @@ const PresseModel = require('../../models/article');
 const Article = PresseModel(db.sequelize, db.Sequelize);
 
 exports.getPresseList = async (req, res) => {
-  const articles = await Article.findAll({
-    order: [
-      ['createdAt', 'DESC']
-    ]
-  });
-  
-  const cleanedArticles = articles.map(article => {
-    console.log('article dans map :>> ', article);
-    const formattedDate = moment(article.dataValues.createdAt).format('Créé le DD/MM/YYYY [à] HH:mm');
-    return {
-      id: article.dataValues.id,
-      date: formattedDate,
-      url: article.dataValues.url,
-      date_article: article.dataValues.date_article,
-      auteur: article.dataValues.auteur,
-    };
-  });
+  try {
+    const articles = await Article.findAll({
+      order: [
+        ['createdAt', 'DESC']
+      ]
+    });
 
-  res.status(200).render('back/presseList', {
-    title: 'Yvan Bonet',
-    layout: 'backMain.hbs',
-    articles: cleanedArticles
-  });
+    const cleanedArticles = articles.map(article => {
+      console.log('article dans map :>> ', article);
+      const formattedDate = moment(article.dataValues.createdAt).format('Créé le DD/MM/YYYY [à] HH:mm');
+      return {
+        id: article.dataValues.id,
+        date: formattedDate,
+        url: article.dataValues.url,
+        date_article: article.dataValues.date_article,
+        auteur: article.dataValues.auteur,
+      };
+    });
+  
+    res.status(200).render('back/presseList', {
+      title: 'Yvan Bonet',
+      layout: 'backMain.hbs',
+      articles: cleanedArticles
+    });
+  } catch (err) {
+    return console.log('Error lors du select d\'articles :>> ', err);
+  }
+
 };
 
 exports.createArticlePage = async (req, res) => {
@@ -41,8 +46,13 @@ exports.createArticle = async (req, res) => {
     await Article.createNew(req.body);
     return res.status(201).redirect('/admin/presse/articles');
   } catch (err) {
-    // TODO : Renvoyer à la page d'ajout en la pré-remplissant 
+    
     console.log('Erreur lors de l\'ajout : ', err);
+    res.status(500).render('back/presseAddArticle', {
+      title: 'Yvan Bonet',
+      layout: 'backMain.hbs',
+      article: req.body
+    });
   }
 };
 
@@ -67,15 +77,25 @@ exports.getArticleDetails = async (req, res) => {
 
 exports.updateArticle = async (req, res) => {
   try { 
-    const updatedArticle = await Article.updateArticle(req.body, req.params.id);
-    res.status(201).json({
-      status: 'success',
-      data: updatedArticle
-    });
+    await Article.updateArticle(req.body, req.params.id);
+    res.status(201).redirect('/admin/presse/articles');
   } catch (err) {
-    res.status(400).json({
-      status: 'fail here',
-      data: err
+    console.log('Erreur lors de la modification : ', err);
+    res.status(200).render('back/presseDetail', {
+      title: 'Yvan Bonet',
+      layout: 'backMain.hbs',
+      article: req.body
     });
   }
 };
+
+exports.deleteArticle = async (req, res) => {
+  try { 
+    await Article.deleteArticle(req.params.id);
+    res.status(201).redirect('/admin/presse/articles');
+  } catch (err) {
+    console.log('Erreur lors de la modification : ', err);
+    res.status(201).redirect('/admin/presse/articles');
+  }
+};
+

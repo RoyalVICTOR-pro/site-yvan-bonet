@@ -13,10 +13,3 @@ exports.getLoginPage = (req, res, next) => {
     errorMessage: errorMessage
   });
 };
-
-exports.getContactsList = (req, res, next) => {
-  res.status(200).render('back/contacts', {
-    title: 'Yvan Bonet',
-    layout: 'backMain.hbs'
-  });
-};

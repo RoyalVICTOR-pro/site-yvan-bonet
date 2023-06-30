@@ -30,7 +30,7 @@ router.get('/presse/article/ajouter', presseController.createArticlePage);
 router.post('/presse/article/ajouter', presseController.createArticle);
 router.get('/presse/article/:id', presseController.getArticleDetails);
 router.post('/presse/article/modifier/:id', presseController.updateArticle);
-
+router.get('/presse/article/supprimer/:id', presseController.deleteArticle);
 
 
 module.exports = router;
