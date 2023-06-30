@@ -38,16 +38,11 @@ exports.createArticlePage = async (req, res) => {
 
 exports.createArticle = async (req, res) => {
   try { 
-    const newArticle = await Article.createNew(req.body);
-    res.status(201).json({
-      status: 'success',
-      data: newArticle
-    });
+    await Article.createNew(req.body);
+    return res.status(201).redirect('/admin/presse/articles');
   } catch (err) {
-    res.status(400).json({
-      status: 'fail here',
-      data: err
-    });
+    // TODO : Renvoyer à la page d'ajout en la pré-remplissant 
+    console.log('Erreur lors de l\'ajout : ', err);
   }
 };
 

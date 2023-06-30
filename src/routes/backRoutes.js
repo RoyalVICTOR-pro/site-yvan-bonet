@@ -2,6 +2,7 @@ const express = require('express');
 const backMainController = require('../controllers/back/mainController.js');
 const userController = require('../controllers/back/userController.js');
 const contactsController = require('../controllers/back/contactsController.js');
+const presseController = require('../controllers/back/presseController.js');
 
 const router = express.Router();
 
@@ -21,7 +22,15 @@ router.get('/logout', userController.logout);
 
 router.use(userController.protect);
 router.use(userController.isLoggedIn);
+
 router.get('/contacts', contactsController.getContactsList);
 router.get('/contact/:id', contactsController.getContactDetails);
+router.get('/presse/articles', presseController.getPresseList);
+router.get('/presse/article/ajouter', presseController.createArticlePage);
+router.post('/presse/article/ajouter', presseController.createArticle);
+router.get('/presse/article/:id', presseController.getArticleDetails);
+router.post('/presse/article/modifier/:id', presseController.updateArticle);
+
+
 
 module.exports = router;
