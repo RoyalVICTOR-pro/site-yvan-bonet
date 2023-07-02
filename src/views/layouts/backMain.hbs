@@ -17,6 +17,9 @@
             <span class="separator">|</span>
             <span class="baseline">Avocat</span>
           </a>
+          <div class="back_menu">
+            <a href="/admin/contacts" class="back_menu_item {{#equal currentPage 'contacts'}}active{{/equal}}">Contacts</a> | <a href="/admin/presse/articles" class="back_menu_item {{#equal currentPage 'presse'}}active{{/equal}}">Presse</a>
+          </div>
       </div>
       {{#if user}}
         <div class="logout navbar-text">

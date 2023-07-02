@@ -26,6 +26,7 @@ exports.getPresseList = async (req, res) => {
     res.status(200).render('back/presseList', {
       title: 'Yvan Bonet',
       layout: 'backMain.hbs',
+      currentPage: req.body.currentPage,
       articles: cleanedArticles
     });
   } catch (err) {
@@ -37,7 +38,8 @@ exports.getPresseList = async (req, res) => {
 exports.createArticlePage = async (req, res) => {
   res.status(200).render('back/presseAddArticle', {
     title: 'Yvan Bonet',
-    layout: 'backMain.hbs'
+    layout: 'backMain.hbs',
+    currentPage: req.body.currentPage
   });
 };
 
@@ -51,6 +53,7 @@ exports.createArticle = async (req, res) => {
     res.status(500).render('back/presseAddArticle', {
       title: 'Yvan Bonet',
       layout: 'backMain.hbs',
+      currentPage: req.body.currentPage,
       article: req.body
     });
   }
@@ -71,6 +74,7 @@ exports.getArticleDetails = async (req, res) => {
   res.status(200).render('back/presseDetail', {
     title: 'Yvan Bonet',
     layout: 'backMain.hbs',
+    currentPage: req.body.currentPage,
     article: cleanedArticle
   });
 };
@@ -84,6 +88,7 @@ exports.updateArticle = async (req, res) => {
     res.status(200).render('back/presseDetail', {
       title: 'Yvan Bonet',
       layout: 'backMain.hbs',
+      currentPage: req.body.currentPage,
       article: req.body
     });
   }

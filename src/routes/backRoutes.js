@@ -23,8 +23,10 @@ router.get('/logout', userController.logout);
 router.use(userController.protect);
 router.use(userController.isLoggedIn);
 
+router.use(backMainController.setCurrentPageInfo('contacts'));
 router.get('/contacts', contactsController.getContactsList);
 router.get('/contact/:id', contactsController.getContactDetails);
+router.use(backMainController.setCurrentPageInfo('presse'));
 router.get('/presse/articles', presseController.getPresseList);
 router.get('/presse/article/ajouter', presseController.createArticlePage);
 router.post('/presse/article/ajouter', presseController.createArticle);

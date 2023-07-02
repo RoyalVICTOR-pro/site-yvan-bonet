@@ -1,9 +1,9 @@
 
-exports.redirectToDefaultHomePage = (req, res, next) => {
+exports.redirectToDefaultHomePage = (req, res) => {
   return res.redirect('/admin/contacts');
 };
 
-exports.getLoginPage = (req, res, next) => {
+exports.getLoginPage = (req, res) => {
   const errorMessage = req.session.errorMessage;
   delete req.session.errorMessage;
 
@@ -12,4 +12,11 @@ exports.getLoginPage = (req, res, next) => {
     layout: 'backMain.hbs',
     errorMessage: errorMessage
   });
+};
+
+exports.setCurrentPageInfo = (sendedCurrentPage) => {
+  return (req, res, next) => {
+    req.body.currentPage = sendedCurrentPage;
+    next();
+  };
 };
