@@ -515,6 +515,38 @@ body {
   text-align: center;
   font-weight: 300; }
 
+.presse-article {
+  width: 100%;
+  margin: 3rem auto;
+  padding: 4rem 4rem;
+  border: 1px solid #353535; }
+
+.date-article {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 1rem; }
+
+.auteur-article {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 1rem; }
+
+.extrait-article {
+  font-style: italic;
+  margin-bottom: 1rem; }
+
+.description-article {
+  margin-bottom: 2rem; }
+
+.main_internal_page_presse {
+  font-size: 1.5rem;
+  width: 70vw;
+  margin: 0 auto;
+  padding: 10vh 0; }
+  @media only screen and (max-width: 75em) {
+    .main_internal_page_presse {
+      width: 90%; } }
+
 .btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -600,6 +632,22 @@ body {
 .btn-text_arrow {
   margin-left: 2vw;
   margin-top: 1vh; }
+
+.small-btn-text:link, .small-btn-text:visited {
+  background-color: #FFDC22;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #353535;
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.5rem 2rem;
+  height: 4rem;
+  margin-right: 3rem; }
+
+.small-btn-text:hover {
+  background-color: #FFDC22;
+  color: #353535;
+  /* box-shadow: 0 1rem 2rem rgba($color-black,.15); */ }
 
 .form__group:not(:last-child) {
   margin-bottom: 2rem; }

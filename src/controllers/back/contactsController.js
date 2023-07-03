@@ -51,3 +51,14 @@ exports.getContactDetails = async (req, res) => {
     contact: cleanedContact
   });
 };
+
+exports.deleteContact = async (req, res) => {
+  try { 
+    await Contact.deleteContact(req.params.id);
+    res.status(201).redirect('/admin/contacts');
+  } catch (err) {
+    console.log('Erreur lors de la modification : ', err);
+    res.status(201).redirect('/admin/contacts');
+  }
+};
+

@@ -47,5 +47,15 @@ module.exports = (sequelize, DataTypes) => {
     });
     return Contact;
   };
+
+  Contact.deleteContact = async (sendedID) => {
+    await Contact.destroy({
+      where: {
+        id: sendedID
+      }
+    });
+    return Contact;
+  };
+
   return Contact;
 };

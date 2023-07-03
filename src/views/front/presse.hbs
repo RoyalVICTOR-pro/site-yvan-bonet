@@ -1,8 +1,16 @@
 <section class="main_internal_page_bandeau">
+  <img src="/img/{{ icon_file_name }}" alt="{{ page_title }}" class="main_internal_page_bandeau_icon">  
   <h1 class="main_internal_page_bandeau_title">{{{ page_title }}}</h1>
 </section>
-<div class="main_internal_page_text">
-  {{{ page_text }}}
+<div class="main_internal_page_presse">
+  {{#each articles}}
+      <div class="presse-article">
+        <span class="date-article">{{{this.date_article}}}</span> - <span class="auteur-article">{{{this.auteur}}}</span>
+        <p class="extrait-article">"{{{this.extract}}}"</p>
+        <p class="description-article">{{{this.description}}}</p>
+        <a href="{{{this.url}}}" class="small-btn-text" target="_blank">Lire l'article</a>
+      </div>
+    {{/each}}
 </div>
 {{> sectionUrgencePenale }}
 {{> sectionConfiance }}

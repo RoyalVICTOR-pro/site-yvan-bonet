@@ -26,6 +26,7 @@ router.use(userController.isLoggedIn);
 router.use(backMainController.setCurrentPageInfo('contacts'));
 router.get('/contacts', contactsController.getContactsList);
 router.get('/contact/:id', contactsController.getContactDetails);
+router.get('/contact/supprimer/:id', contactsController.deleteContact);
 router.use(backMainController.setCurrentPageInfo('presse'));
 router.get('/presse/articles', presseController.getPresseList);
 router.get('/presse/article/ajouter', presseController.createArticlePage);
