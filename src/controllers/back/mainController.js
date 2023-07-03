@@ -1,9 +1,9 @@
 
-exports.redirectToDefaultHomePage = (req, res, next) => {
+exports.redirectToDefaultHomePage = (req, res) => {
   return res.redirect('/admin/contacts');
 };
 
-exports.getLoginPage = (req, res, next) => {
+exports.getLoginPage = (req, res) => {
   const errorMessage = req.session.errorMessage;
   delete req.session.errorMessage;
 
@@ -14,9 +14,9 @@ exports.getLoginPage = (req, res, next) => {
   });
 };
 
-exports.getContactsList = (req, res, next) => {
-  res.status(200).render('back/contacts', {
-    title: 'Yvan Bonet',
-    layout: 'backMain.hbs'
-  });
+exports.setCurrentPageInfo = (sendedCurrentPage) => {
+  return (req, res, next) => {
+    req.body.currentPage = sendedCurrentPage;
+    next();
+  };
 };

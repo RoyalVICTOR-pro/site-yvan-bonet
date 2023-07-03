@@ -10161,3 +10161,18 @@ body {
   background-color: #FFDC22;
   color: #353535;
   /* box-shadow: 0 1rem 2rem rgba($color-black,.15); */ }
+
+.back_menu_item:link, .back_menu_item:visited, .back_menu_item:hover, .back_menu_item:active {
+  text-decoration: none;
+  color: #000;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 900; }
+
+.active:link, .active:visited, .active:hover, .active:active {
+  text-decoration: none;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #D6D6D6;
+  cursor: inherit; }

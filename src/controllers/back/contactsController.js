@@ -25,6 +25,7 @@ exports.getContactsList = async (req, res) => {
   res.status(200).render('back/contacts', {
     title: 'Yvan Bonet',
     layout: 'backMain.hbs',
+    currentPage: req.body.currentPage,
     contacts: cleanedContacts
   });
 };
@@ -46,6 +47,7 @@ exports.getContactDetails = async (req, res) => {
   res.status(200).render('back/contact', {
     title: 'Yvan Bonet',
     layout: 'backMain.hbs',
+    currentPage: req.body.currentPage,
     contact: cleanedContact
   });
 };
