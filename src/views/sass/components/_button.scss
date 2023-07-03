@@ -110,3 +110,24 @@
     margin-top: 1vh;
   }
 }
+
+.small-btn-text {
+  &:link,
+  &:visited {
+    background-color: $color-primary;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $color-grey-dark;
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.5rem 2rem;
+    height: 4rem;
+    margin-right: 3rem;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-grey-dark;
+    /* box-shadow: 0 1rem 2rem rgba($color-black,.15); */
+  }
+}
