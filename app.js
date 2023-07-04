@@ -90,7 +90,11 @@ app.use(
 app.use(session({
   secret: process.env.JWT_SECRET,
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  cookie: {
+    secure: true, // Utilisez true si votre site utilise HTTPS
+    maxAge: 31536000000 // 1 an
+  }
 }));
 
 // 3) ROUTES

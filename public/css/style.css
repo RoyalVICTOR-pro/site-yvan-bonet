@@ -823,6 +823,39 @@ body {
   .popup__close:hover {
     color: #FFDC22; }
 
+#cookie-consent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: #D6D6D6;
+  text-align: center;
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 9999; }
+
+#cookie-consent p {
+  margin: 0; }
+
+#cookie-consent button {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer; }
+
+#cookie-consent button.accept {
+  background-color: #FFDC22;
+  color: #353535; }
+
+#cookie-consent button.decline {
+  background-color: #7B7B7B;
+  color: #D6D6D6; }
+
 .footer {
   text-align: center; }
   .footer_logo_container {
