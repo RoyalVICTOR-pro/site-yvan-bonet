@@ -86,7 +86,7 @@ exports.googleAnalyticsMiddleware = (req, res, next) => {
   // Activer le suivi de Google Analytics si les cookies sont acceptés
   if (cookiesAccepted) {
     res.locals.showGoogleAnalytics = true; // Variable pour activer le code de suivi dans la vue
-    res.locals.googleAnalyticsTrackingId = 'UA-XXXXXXXXX-X'; // Identifiant de suivi réel
+    res.locals.googleAnalyticsTrackingId = 'G-TBQH0LBJ49'; // Identifiant de suivi réel
 
     // Code de suivi de Google Analytics
     res.locals.googleAnalyticsCode = `
