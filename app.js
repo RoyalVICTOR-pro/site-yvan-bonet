@@ -8,6 +8,7 @@ const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const exphbs = require('express-handlebars');
 const Handlebars = require('handlebars');
+const crypto = require('crypto');
 
 const AppError = require('./src/utils/appError');
 // const globalErrorHandler = require('./src/controllers/errorController');
@@ -44,6 +45,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Set security HTTP headers
 app.use(helmet());
+
+app.use((req, res, next) => {
+  const nonce = crypto.randomBytes(16).toString('hex');
+  req.nonce = nonce;
+
+  next();
+});
+
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      scriptSrc: ['\'self\'',(req, res) => `'nonce-${req.nonce}'`],
+      imgSrc: ['\'self\'', 'www.googletagmanager.com'],
+    },
+  })
+);
 
 // Developping logging
 if (process.env.NODE_ENV === 'development') {

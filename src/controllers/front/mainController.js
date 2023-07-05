@@ -82,6 +82,10 @@ exports.declineCookies = (req, res) => {
 exports.googleAnalyticsMiddleware = (req, res, next) => {
   // Vérifier si les cookies ont été acceptés
   const cookiesAccepted = req.session.cookiesAccepted || req.cookies.cookiesAccepted;
+  
+  const nonce = req.nonce; // Récupérez le nonce attaché à la requête
+  res.setHeader('Content-Security-Policy', `script-src 'self' 'nonce-${nonce}'; img-src www.googletagmanager.com`);
+  // res.locals.nonce = nonce;
 
   // Activer le suivi de Google Analytics si les cookies sont acceptés
   if (cookiesAccepted) {
@@ -90,8 +94,8 @@ exports.googleAnalyticsMiddleware = (req, res, next) => {
 
     // Code de suivi de Google Analytics
     res.locals.googleAnalyticsCode = `
-      <script async src="https://www.googletagmanager.com/gtag/js?id=${res.locals.googleAnalyticsTrackingId}"></script>
-      <script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=${res.locals.googleAnalyticsTrackingId}" nonce="${nonce}"></script>
+      <script nonce="${nonce}">
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
