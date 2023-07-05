@@ -56,8 +56,8 @@ app.use((req, res, next) => {
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
-      scriptSrc: ['\'self\'',(req, res) => `'nonce-${req.nonce}'`],
-      imgSrc: ['\'self\'', 'www.googletagmanager.com'],
+      scriptSrc: ["'self'", `'nonce-${req.nonce}'`],
+      imgSrc: ["'self'", 'www.googletagmanager.com'],
     },
   })
 );
