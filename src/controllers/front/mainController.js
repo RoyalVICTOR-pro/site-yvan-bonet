@@ -84,7 +84,7 @@ exports.googleAnalyticsMiddleware = (req, res, next) => {
   const cookiesAccepted = req.session.cookiesAccepted || req.cookies.cookiesAccepted;
   
   const nonce = req.nonce; // Récupérez le nonce attaché à la requête
-  res.setHeader('Content-Security-Policy', `script-src 'self' 'nonce-${nonce}'; img-src www.googletagmanager.com`);
+  res.setHeader('Content-Security-Policy', `script-src 'self' 'nonce-${nonce}'; img-src 'self' www.googletagmanager.com bonetavocat.fr`);
   // res.locals.nonce = nonce;
 
   // Activer le suivi de Google Analytics si les cookies sont acceptés
