@@ -5,6 +5,8 @@ const presseController = require('../controllers/front/presseController');
 
 const router = express.Router();
 
+router.use(frontMainController.isCookiesAccepted);
+router.use(frontMainController.googleAnalyticsMiddleware);
 router.get('/', frontMainController.getHomePage);
 // router.get('/domaine-intervention/:slug', viewsController.getTour);
 
@@ -21,5 +23,9 @@ router.get('/politique-confidentialite', frontMainController.getPage('politique-
 
 router.get('/contact', contactController.getContactPage);
 router.post('/contact', contactController.receiveNewContact);
+
+// Routes pour gérer la bande des cookies
+router.post('/accept-cookies', frontMainController.acceptCookies);
+router.post('/decline-cookies', frontMainController.declineCookies);
 
 module.exports = router;

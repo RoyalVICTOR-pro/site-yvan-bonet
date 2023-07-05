@@ -57,3 +57,52 @@ exports.getPage = (pageName) => {
     }
   };
 };
+
+exports.isCookiesAccepted = (req, res, next) => {
+  if (!req.session.cookiesAccepted && !req.cookies.cookiesAccepted) {
+    res.locals.showCookieConsent = true;
+  } else {
+    res.locals.showCookieConsent = false;
+  }
+  next();
+};
+
+exports.acceptCookies = (req, res) => {
+  req.session.cookiesAccepted = true;
+  res.cookie('cookiesAccepted', true, { maxAge: 31536000000 }); // 1 an
+  res.redirect(req.headers.referer || '/');
+};
+
+exports.declineCookies = (req, res) => {
+  req.session.cookiesAccepted = false;
+  res.cookie('cookiesAccepted', false, { maxAge: 31536000000 }); // 1 an
+  res.redirect(req.headers.referer || '/');
+};
+
+exports.googleAnalyticsMiddleware = (req, res, next) => {
+  // Vérifier si les cookies ont été acceptés
+  const cookiesAccepted = req.session.cookiesAccepted || req.cookies.cookiesAccepted;
+
+  // Activer le suivi de Google Analytics si les cookies sont acceptés
+  if (cookiesAccepted) {
+    res.locals.showGoogleAnalytics = true; // Variable pour activer le code de suivi dans la vue
+    res.locals.googleAnalyticsTrackingId = 'G-TBQH0LBJ49'; // Identifiant de suivi réel
+
+    // Code de suivi de Google Analytics
+    res.locals.googleAnalyticsCode = `
+      <script async src="https://www.googletagmanager.com/gtag/js?id=${res.locals.googleAnalyticsTrackingId}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${res.locals.googleAnalyticsTrackingId}');
+      </script>
+    `;
+  } else {
+    res.locals.showGoogleAnalytics = false; // Variable pour désactiver le code de suivi dans la vue
+    res.locals.googleAnalyticsTrackingId = ''; // Identifiant de suivi vide
+    res.locals.googleAnalyticsCode = ''; // Code de suivi vide
+  }
+
+  next();
+};

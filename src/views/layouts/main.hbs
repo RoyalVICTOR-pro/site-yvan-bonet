@@ -97,6 +97,23 @@
             </div>
           </div>
         </footer>
+        {{#if showCookieConsent}}
+          <div id="cookie-consent">
+            <p>
+              Ce site utilise des cookies pour améliorer votre expérience. Acceptez-vous
+              l'utilisation des cookies ?
+            </p>
+            <form action="/accept-cookies" method="POST">
+              <button type="submit" class="accept">Accepter</button>
+            </form>
+            <form action="/decline-cookies" method="POST">
+              <button type="submit" class="decline">Refuser</button>
+            </form>
+          </div>
+        {{/if}}
         <script src="/js/index.js"></script>
+        {{#if showGoogleAnalytics}}
+          {{{googleAnalyticsCode}}}
+        {{/if}}
     </body>
 </html>
