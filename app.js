@@ -57,7 +57,7 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       scriptSrc: ['\'self\'',(req, res) => `'nonce-${req.nonce}'`],
-      imgSrc: ['\'self\'', 'www.googletagmanager.com'],
+      imgSrc: ['\'self\'', 'www.googletagmanager.com bonetavocat.fr'],
     },
   })
 );
