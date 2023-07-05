@@ -53,14 +53,14 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(
+/* app.use(
   helmet.contentSecurityPolicy({
     directives: {
       scriptSrc: ["'self'", `'nonce-${req.nonce}'`],
       imgSrc: ["'self'", 'www.googletagmanager.com'],
     },
   })
-);
+); */
 
 // Developping logging
 if (process.env.NODE_ENV === 'development') {
