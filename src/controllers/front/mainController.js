@@ -84,7 +84,9 @@ exports.googleAnalyticsMiddleware = (req, res, next) => {
   const cookiesAccepted = req.session.cookiesAccepted || req.cookies.cookiesAccepted;
   
   const nonce = req.nonce; // Récupérez le nonce attaché à la requête
-  res.setHeader('Content-Security-Policy', `script-src 'self' 'nonce-${nonce}'; style-src 'self' https://fonts.googleapis.com 'nonce-${nonce}'; img-src 'self' https://www.googletagmanager.com https://bonetavocat.fr; font-src 'self' https://fonts.gstatic.com;`);
+  //res.setHeader('Content-Security-Policy', `script-src 'self' 'nonce-${nonce}'; img-src 'self' https://www.googletagmanager.com https://bonetavocat.fr`);
+  //res.setHeader('Content-Security-Policy', `script-src 'self' 'nonce-${nonce}'; style-src 'self' https://fonts.googleapis.com 'nonce-${nonce}'; img-src 'self' https://www.googletagmanager.com https://bonetavocat.fr; font-src 'self' https://fonts.gstatic.com;`);
+  res.setHeader('Content-Security-Policy', `script-src 'self' 'nonce-${nonce}'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com https://bonetavocat.fr; font-src 'self' https://fonts.gstatic.com;`);
 
   // res.locals.nonce = nonce;
 
