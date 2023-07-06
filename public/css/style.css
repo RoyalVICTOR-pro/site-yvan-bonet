@@ -128,7 +128,7 @@ body {
 
 .bandeau {
   height: 95vh;
-  background: url("../img/image_bandeau@2x.png");
+  background: url("../img/image_bandeau@2x.webp");
   background-size: cover;
   background-position: bottom;
   display: flex;
