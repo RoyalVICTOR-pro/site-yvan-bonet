@@ -104,7 +104,7 @@
 
   @include respond(tab-port) {
     flex-direction: column;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
 }
 
@@ -117,6 +117,13 @@
 .address {
   display: flex;
   flex-direction: row;
+}
+
+.contact_informations .address,
+.contact_informations .mobile,
+.contact_informations .phone,
+.contact_informations .email {
+  margin-bottom: 2.5rem;
 }
 
 .footer_bar {

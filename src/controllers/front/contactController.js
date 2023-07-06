@@ -26,6 +26,7 @@ exports.getContactPage = (req, res) => {
   res.status(200).render('front/contact', {
     active_menu: contentData.contact.active_menu,
     title: contentData.contact.seo_title,
+    description: contentData.contact.seo_description,
     icon_file_name: contentData.contact.icon_file_name,
     page_title: contentData.contact.page_title
   });

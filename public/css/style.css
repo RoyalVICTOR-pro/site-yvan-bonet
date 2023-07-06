@@ -853,8 +853,8 @@ body {
   color: #353535; }
 
 #cookie-consent button.decline {
-  background-color: #7B7B7B;
-  color: #D6D6D6; }
+  background-color: #E8E8E8;
+  color: #353535; }
 
 .footer {
   text-align: center; }
@@ -938,7 +938,7 @@ body {
   @media only screen and (max-width: 56.25em) {
     .contact_informations {
       flex-direction: column;
-      font-size: 1.6rem; } }
+      font-size: 1.7rem; } }
 
 .colored-letter {
   font-weight: 600;
@@ -948,6 +948,12 @@ body {
 .address {
   display: flex;
   flex-direction: row; }
+
+.contact_informations .address,
+.contact_informations .mobile,
+.contact_informations .phone,
+.contact_informations .email {
+  margin-bottom: 2.5rem; }
 
 .footer_bar {
   background-color: #292929;

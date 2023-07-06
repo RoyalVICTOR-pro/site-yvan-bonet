@@ -25,6 +25,7 @@ exports.getPressePage = async (req, res) => {
     res.status(200).render('front/presse', {
       active_menu: contentData.presse.active_menu,
       title: contentData.presse.seo_title,
+      description: contentData.presse.seo_description,
       icon_file_name: contentData.presse.icon_file_name,
       page_title: contentData.presse.page_title,
       articles: cleanedArticles
