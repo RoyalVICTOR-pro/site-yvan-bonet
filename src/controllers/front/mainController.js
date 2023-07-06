@@ -12,7 +12,7 @@ exports.getHomePage = (req, res) => {
 exports.getDomainPage = (req, res) => {
   res.status(200).render('front/mainInternalPage', {
     active_menu: contentData[req.params.slug].active_menu,
-    seo_title: contentData[req.params.slug].seo_title,
+    title: contentData[req.params.slug].seo_title,
     icon_file_name: contentData[req.params.slug].icon_file_name,
     page_title: contentData[req.params.slug].page_title,
     page_intro: contentData[req.params.slug].page_intro,
