@@ -5,7 +5,8 @@ exports.getHomePage = (req, res) => {
   console.log('Entrée dans getHomePage');
   // exphbs.registerPartial('')
   res.status(200).render('front/home', {
-    title: contentData.home.seo_title
+    title: contentData.home.seo_title,
+    description: contentData.home.seo_description
   });
 };
 
