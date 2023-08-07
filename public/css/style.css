@@ -93,7 +93,8 @@ Ainsi ca sera le box-sizing border-box qui sera appliqué partout.
   font-family: 'Trajan';
   src: local("Trajan Pro 3 Semi Bold"), local("Trajan-Pro-3-Semi-Bold"), url("./fonts/TrajanPro3SemiBold.woff2") format("woff2"), url("./fonts/TrajanPro3SemiBold.woff") format("woff"), url("./fonts/TrajanPro3SemiBold.ttf") format("truetype");
   font-weight: 600;
-  font-style: normal; }
+  font-style: normal;
+  font-display: swap; }
 
 body {
   font-family: 'Poppins', sans-serif;

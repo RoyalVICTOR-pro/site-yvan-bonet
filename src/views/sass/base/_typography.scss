@@ -1,18 +1,18 @@
-
 @font-face {
-    font-family: 'Trajan';
-    src: local('Trajan Pro 3 Semi Bold'), local('Trajan-Pro-3-Semi-Bold'),
-        url('./fonts/TrajanPro3SemiBold.woff2') format('woff2'),
-        url('./fonts/TrajanPro3SemiBold.woff') format('woff'),
-        url('./fonts/TrajanPro3SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
+  font-family: 'Trajan';
+  src: local('Trajan Pro 3 Semi Bold'), local('Trajan-Pro-3-Semi-Bold'),
+    url('./fonts/TrajanPro3SemiBold.woff2') format('woff2'),
+    url('./fonts/TrajanPro3SemiBold.woff') format('woff'),
+    url('./fonts/TrajanPro3SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    /* font-size: 16px; */
-    line-height: 1.7;
-    color: $color-grey-dark;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: $color-grey-dark;
 }
