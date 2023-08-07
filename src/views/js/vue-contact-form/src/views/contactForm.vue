@@ -24,7 +24,7 @@
       <Field as="textarea" name="message" v-model="contact.message" placeholder="Message *" class="field form__textarea" :rules="isRequired" />
       <label class="form__label">Message *</label>
     </div>
-    <button class="btn btn--primary btn--send" type="submit">Send</button>
+    <button class="btn btn--primary btn--send" type="submit">Envoyer</button>
   </Form>
 </template>
 
