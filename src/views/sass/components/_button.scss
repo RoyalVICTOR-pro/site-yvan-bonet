@@ -97,6 +97,7 @@
     display: inline-block;
     text-decoration: none;
     padding: 2vh 2vw;
+    display: flex;
   }
 
   &:hover {
@@ -107,7 +108,6 @@
 
   &_arrow {
     margin-left: 2vw;
-    margin-top: 1vh;
   }
 }
 
