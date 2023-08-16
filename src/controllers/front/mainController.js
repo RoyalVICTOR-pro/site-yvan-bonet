@@ -35,8 +35,8 @@ exports.getPage = (pageName) => {
         page_text: contentData[pageName].page_text
       });
       break;
-    case 'parcours':
-      res.status(200).render('front/parcoursPage', {
+    case 'cabinet':
+      res.status(200).render('front/cabinetPage', {
         active_menu: contentData[pageName].active_menu,
         title: contentData[pageName].seo_title,
         description: contentData[pageName].seo_description,
@@ -45,6 +45,9 @@ exports.getPage = (pageName) => {
         page_intro: contentData[pageName].page_intro,
         page_text: contentData[pageName].page_text
       });  
+      break;
+    case 'parcours':
+      res.status(301).redirect('/cabinet');
       break;
     case 'honoraires':
       res.status(200).render('front/mainInternalPage', {

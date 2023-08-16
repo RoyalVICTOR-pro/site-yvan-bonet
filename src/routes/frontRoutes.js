@@ -13,6 +13,7 @@ router.get('/', frontMainController.getHomePage);
 router.get('/domaines-interventions/:slug/', frontMainController.getDomainPage);
 
 router.get('/parcours', frontMainController.getPage('parcours'));
+router.get('/cabinet', frontMainController.getPage('cabinet'));
 
 router.get('/honoraires', frontMainController.getPage('honoraires'));
 
