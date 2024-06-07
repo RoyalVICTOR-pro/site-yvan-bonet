@@ -12,9 +12,6 @@ var EMAIL_HOST = process.env.EMAIL_HOST;
 var EMAIL_USERNAME = process.env.EMAIL_USERNAME;
 var EMAIL_PORT = process.env.EMAIL_PORT;
 var EMAIL_PASSWORD = process.env.EMAIL_PASSWORD;
-var errorMailTransporter;
-
-console.log('contactController appelé');
 
 const mailTransporter = nodemailer.createTransport({
   host: EMAIL_HOST,
@@ -25,20 +22,21 @@ const mailTransporter = nodemailer.createTransport({
   }
 });
 
-mailTransporter.verify(function (error, success) {
-  console.log('EMAIL_HOST : ', EMAIL_HOST);
-  console.log('EMAIL_USERNAME : ', EMAIL_USERNAME);
-  console.log('EMAIL_PORT : ', EMAIL_PORT);
-  console.log('EMAIL_PASSWORD : ', EMAIL_PASSWORD);
+// var errorMailTransporter;
+// mailTransporter.verify(function (error, success) {
+//   console.log('EMAIL_HOST : ', EMAIL_HOST);
+//   console.log('EMAIL_USERNAME : ', EMAIL_USERNAME);
+//   console.log('EMAIL_PORT : ', EMAIL_PORT);
+//   console.log('EMAIL_PASSWORD : ', EMAIL_PASSWORD);
 
-  if (error) {
-    console.log('Erreur MailTransporter : ', error);
-    errorMailTransporter = error;
-  } else {
-    console.log(success);
-    console.log('Server is ready to take our messages');
-  }
-});
+//   if (error) {
+//     console.log('Erreur MailTransporter : ', error);
+//     errorMailTransporter = error;
+//   } else {
+//     console.log(success);
+//     console.log('Server is ready to take our messages');
+//   }
+// });
 
 exports.getContactPage = (req, res) => {
   res.status(200).render('front/contact', {
@@ -139,7 +137,6 @@ exports.receiveNewContact = async (req, res) => {
     res.status(400).json({
       status: 'fail here',
       data: err,
-      log: EMAIL_HOST + ' - ' + EMAIL_USERNAME + ' - ' + EMAIL_PORT + ' - ' + EMAIL_PASSWORD + ' - ' + errorMailTransporter,
     });
   }
 
