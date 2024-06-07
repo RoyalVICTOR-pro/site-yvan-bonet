@@ -13,12 +13,28 @@ var EMAIL_USERNAME = process.env.EMAIL_USERNAME;
 var EMAIL_PORT = process.env.EMAIL_PORT;
 var EMAIL_PASSWORD = process.env.EMAIL_PASSWORD;
 
+console.log('contactController appelé');
+
 const mailTransporter = nodemailer.createTransport({
   host: EMAIL_HOST,
   port: EMAIL_PORT,
   auth: {
     user: EMAIL_USERNAME,
     pass: EMAIL_PASSWORD
+  }
+});
+
+mailTransporter.verify(function (error, success) {
+  console.log('EMAIL_HOST : ', EMAIL_HOST);
+  console.log('EMAIL_USERNAME : ', EMAIL_USERNAME);
+  console.log('EMAIL_PORT : ', EMAIL_PORT);
+  console.log('EMAIL_PASSWORD : ', EMAIL_PASSWORD);
+  
+  if (error) {
+    console.log('Erreur MailTransporter : ', error);
+  } else {
+    console.log(success);
+    console.log('Server is ready to take our messages');
   }
 });
 
