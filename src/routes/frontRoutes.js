@@ -29,4 +29,13 @@ router.post('/contact', contactController.receiveNewContact);
 router.post('/accept-cookies', frontMainController.acceptCookies);
 router.post('/decline-cookies', frontMainController.declineCookies);
 
+// Landing Page Tabenca
+/* 
+ATTENTION !
+Quand une nouvelle page est ajoutée ici, comme il y a un formulaire de contact VueJS dans les landing pages,
+il faut aussi ajouter une route dans le fichier src\views\js\vue-contact-form\src\router\index.js
+Il faut ensuite faire un npm run webpack pour compiler le fichier.
+*/
+router.get('/avocat-droit-penal-vincennes-creteil', frontMainController.getLandingPage('droit-penal'));
+
 module.exports = router;

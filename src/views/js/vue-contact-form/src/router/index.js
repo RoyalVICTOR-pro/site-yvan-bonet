@@ -9,6 +9,11 @@ const routes = [
     component: ContactForm,
   },
   {
+    path: '/avocat-droit-penal-vincennes-creteil',
+    name: 'contactForm',
+    component: ContactForm,
+  },
+  {
     path: '/confirmation',
     name: 'contactConfirm',
     component: ContactConfirm,

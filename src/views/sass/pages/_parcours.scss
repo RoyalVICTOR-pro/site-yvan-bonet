@@ -5,7 +5,7 @@
   // background-color: red;
   margin: 0 auto;
   padding: 100px 20px;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 
   @include respond(tab-port) {
@@ -16,20 +16,40 @@
     max-width: inherit;
   }
 
-  &_left {
-    margin-right: 40px;
-    width: 40%;
+  &_title h2{
+    font-size: 3.6rem;
+    font-weight: 300;
+    padding: 7vh 0;
+    width: 100%;
+    text-align: center;
 
     @include respond(tab-port) {
+      font-size: 2.8rem;
+      width: auto;
       margin-bottom: 20px;
-      width: 100%;
-    }
-
-    img {
-      width: 100%;
     }
   }
 
+  &_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+
+    &_left {
+      margin-right: 40px;
+      width: 40%;
+
+      @include respond(tab-port) {
+        margin-bottom: 20px;
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
   &_right {
     display: flex;
     flex-direction: column;

@@ -49,7 +49,7 @@ exports.login = async (req, res) => {
     // Rediriger l'utilisateur vers la page contacts (ou toute autre page appropriée)
     res.redirect('/admin/contacts');
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     req.session.errorMessage = 'Il y a eu problème lors de l\'authentification.';
     return res.redirect('/admin/login');
   }
@@ -73,7 +73,7 @@ exports.protect = async (req, res, next) => {
     // Pour éviter de devoir fonctionner avec des callbacks,
     // on utilise la méthode promisify qui est fournie par le package 'util' qui est intégré à NodeJS.
     const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
-    console.log('decoded :>> ', decoded);
+    // console.log('decoded :>> ', decoded);
 
     // 3) Check if user still exists
     const existingUser = await User.findOne({ where: { id: decoded.userId } });
@@ -137,7 +137,7 @@ exports.isLoggedIn = async (req, res, next) => {
   next();
 };
 
-exports.logout = async (req, res, next) => {
+exports.logout = async (req, res) => {
   // Effacer le cookie contenant le token
   res.clearCookie('token');
 
@@ -146,7 +146,7 @@ exports.logout = async (req, res, next) => {
 };
 
 exports.createUser = async (req, res) => {
-  console.log('req.body :>> ', req.body);
+  // console.log('req.body :>> ', req.body);
   try {
     const username = req.body.inputEmail.trim();
     const password = req.body.inputPassword.trim();
@@ -166,7 +166,7 @@ exports.createUser = async (req, res) => {
     // Répondre avec succès
     res.status(201).json({ message: 'Utilisateur créé avec succès.', user: newUser });
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     res.status(500).json({ message: 'Une erreur est survenue lors de la création de l\'utilisateur.' });
   }
 };

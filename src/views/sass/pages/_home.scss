@@ -243,6 +243,7 @@
   text-align: center;
   display: block;
   padding: 10vh 20vw;
+  margin: 0;
   background-color: $color-primary;
 
   @include respond(phone) {

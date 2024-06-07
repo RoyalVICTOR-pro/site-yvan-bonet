@@ -52,6 +52,16 @@
   }
 }
 
+.main_internal_page_title {
+  width: 100%;
+  font-weight: 300;
+  font-size: 3.6rem;
+  text-align: center;
+  display: block;
+  border-top: 1px solid $color-grey-light-2;
+  padding: 10vh 0 0 0;
+}
+
 .main_internal_page_text {
   font-size: 1.6rem;
   width: 50vw;

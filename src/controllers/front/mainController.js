@@ -2,7 +2,6 @@ const contentData = require('../../content/data.json');
 
 // const exphbs = require('express-handlebars');
 exports.getHomePage = (req, res) => {
-  console.log('Entrée dans getHomePage');
   // exphbs.registerPartial('')
   res.status(200).render('front/home', {
     title: contentData.home.seo_title,
@@ -59,6 +58,27 @@ exports.getPage = (pageName) => {
         page_intro: contentData[pageName].page_intro,
         page_text: contentData[pageName].page_text
       });  
+      break;
+    default:
+      break;
+    }
+  };
+};
+exports.getLandingPage = (pageName) => {
+  return (req, res) => {
+    switch (pageName) {
+    case 'droit-penal':
+      console.log('Yop');
+      res.status(200).render('front/landingPage', {
+        title: contentData[pageName].seo_title,
+        description: contentData[pageName].seo_description,
+        page_title: contentData[pageName].page_title,
+        page_text: contentData[pageName].page_text,
+        page_subtitle: contentData[pageName].page_subtitle,
+        text_cabinet: contentData['cabinet'].page_text,
+        contact_page_title: contentData['contact'].page_title,
+        contact_icon_file_name : contentData['contact'].icon_file_name,
+      });
       break;
     default:
       break;
