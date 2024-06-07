@@ -10,7 +10,7 @@ const routes = [
   },
   {
     path: '/avocat-droit-penal-vincennes-creteil',
-    name: 'contactForm',
+    name: 'landingPage',
     component: ContactForm,
   },
   {
