@@ -49,6 +49,7 @@ app.use(helmet());
 app.use((req, res, next) => {
   const nonce = crypto.randomBytes(16).toString('hex');
   req.nonce = nonce;
+  res.locals.CSPnonce = nonce;
 
   next();
 }); 
