@@ -45,23 +45,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Set security HTTP headers
 app.use(
-  helmet({
-    contentSecurityPolicy: {
-      directives: {
-        defaultSrc: ['\'self\''],
-        scriptSrc: [
-          '\'self\'', 
-          'https://static.elfsight.com', 
-          'https://www.google.com'
-        ],
-        frameSrc: [
-          'https://www.google.com'
-        ],
-        styleSrc: ['\'self\'', '\'unsafe-inline\''],
-        imgSrc: ['\'self\'', 'data:', 'https://www.google.com'],
-        connectSrc: ['\'self\'', 'https://static.elfsight.com'],
-      }
-    }
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ['\'self\''],
+      scriptSrc: ['\'self\'', '\'unsafe-inline\'', 'https://static.elfsight.com'],
+      frameSrc: ['\'self\'', 'https://www.google.com'],
+      connectSrc: ['\'self\''],
+      styleSrc: ['\'self\'', '\'unsafe-inline\''],
+      fontSrc: ['\'self\''],
+      imgSrc: ['\'self\''],
+    },
   })
 );
 
