@@ -43,30 +43,46 @@ app.set('views', path.join(__dirname, 'src/views/'));
 // Serving static files
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use((req, res, next) => {
+  const nonce = crypto.randomBytes(16).toString('hex');
+  req.nonce = nonce;
+  res.locals.nonce = nonce;
+
+  next();
+}); 
 // Set security HTTP headers
 app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ['\'self\''],
-      scriptSrc: ['\'self\'', '\'unsafe-inline\'', 'https://static.elfsight.com'],
-      frameSrc: ['\'self\'', 'https://www.google.com'],
-      connectSrc: ['\'self\''],
-      styleSrc: ['\'self\'', '\'unsafe-inline\''],
-      fontSrc: ['\'self\''],
-      imgSrc: ['\'self\''],
-    },
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ['\'self\''],
+        scriptSrc: [
+          '\'self\'',
+          (req, res) => `'nonce-${res.locals.nonce}'`,
+          'https://static.elfsight.com',
+          'https://www.google.com'
+        ],
+        scriptSrcElem: [
+          '\'self\'',
+          (req, res) => `'nonce-${res.locals.nonce}'`,
+          'https://static.elfsight.com',
+          'https://www.google.com'
+        ],
+        frameSrc: [
+          'https://www.google.com'
+        ],
+        styleSrc: ['\'self\'', '\'unsafe-inline\''], // Ajoutez ceci si vous avez des styles inline
+        imgSrc: ['\'self\'', 'data:', 'https://www.google.com'],
+        connectSrc: ['\'self\'', 'https://static.elfsight.com'],
+        // Ajoutez d'autres directives nécessaires pour votre application
+      }
+    }
   })
 );
 
 /* 
 app.use(helmet());
-app.use((req, res, next) => {
-  const nonce = crypto.randomBytes(16).toString('hex');
-  req.nonce = nonce;
-  res.locals.CSPnonce = nonce;
 
-  next();
-}); 
 
 app.use(
   helmet.contentSecurityPolicy({
