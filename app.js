@@ -44,23 +44,23 @@ app.set('views', path.join(__dirname, 'src/views/'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Set security HTTP headers
-/* app.use(helmet());
+app.use(helmet());
 
 app.use((req, res, next) => {
   const nonce = crypto.randomBytes(16).toString('hex');
   req.nonce = nonce;
 
   next();
-}); */
+}); 
 
-/* app.use(
+app.use(
   helmet.contentSecurityPolicy({
     directives: {
-      scriptSrc: ["'self'", `'nonce-${req.nonce}'`],
-      imgSrc: ["'self'", 'www.googletagmanager.com'],
+      scriptSrc: ['\'self\'', 'https://static.elfsight.com'],
+      imgSrc: ['\'self\'', 'www.googletagmanager.com'],
     },
   })
-); */
+);
 
 // Developping logging
 if (process.env.NODE_ENV === 'development') {
