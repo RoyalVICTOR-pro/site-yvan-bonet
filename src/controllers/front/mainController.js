@@ -65,8 +65,8 @@ exports.getPage = (pageName) => {
   };
 };
 exports.getLandingPage = (pageName) => {
-  const crypto = require('crypto');
-  const nonce = crypto.randomBytes(16).toString('base64');
+  // const crypto = require('crypto');
+  // const nonce = crypto.randomBytes(16).toString('base64');
 
   return (req, res) => {
     switch (pageName) {
@@ -81,7 +81,7 @@ exports.getLandingPage = (pageName) => {
         text_cabinet: contentData['cabinet'].page_text,
         contact_page_title: contentData['contact'].page_title,
         contact_icon_file_name: contentData['contact'].icon_file_name,
-        nonce: nonce
+        nonce: res.locals.nonce,
       });
       break;
     default:
