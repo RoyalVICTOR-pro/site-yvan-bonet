@@ -48,7 +48,9 @@ app.use(helmet({
     directives: {
       ...helmet.contentSecurityPolicy.getDefaultDirectives(),
       'frame-src': ['\'self\'', 'https://www.google.com'],
-      'script-src': ['\'self\'', 'https://maps.googleapis.com']
+      'script-src': ['\'self\'', 'https://maps.googleapis.com', '\'unsafe-eval\''],
+      'style-src': ['\'self\'', 'https://fonts.googleapis.com'],
+      'font-src': ['\'self\'', 'https://fonts.gstatic.com']
     },
   },
 }));
@@ -57,6 +59,7 @@ app.use((req, res, next) => {
   const nonce = crypto.randomBytes(16).toString('hex');
   req.nonce = nonce;
 
+  res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
   next();
 });
 
