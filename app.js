@@ -49,8 +49,9 @@ app.use(helmet({
       ...helmet.contentSecurityPolicy.getDefaultDirectives(),
       'frame-src': ['\'self\'', 'https://www.google.com'],
       'script-src': ['\'self\'', 'https://maps.googleapis.com', '\'unsafe-eval\''],
-      'style-src': ['\'self\'', 'https://fonts.googleapis.com'],
-      'font-src': ['\'self\'', 'https://fonts.gstatic.com']
+      'style-src': ['\'self\'', 'https://fonts.googleapis.com', '\'unsafe-inline\''],
+      'font-src': ['\'self\'', 'https://fonts.gstatic.com'],
+      'img-src': ['\'self\'', 'https://www.google.com', 'https://maps.gstatic.com', 'https://maps.googleapis.com']
     },
   },
 }));
@@ -60,6 +61,7 @@ app.use((req, res, next) => {
   req.nonce = nonce;
 
   res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
+  res.setHeader('Cross-Origin-Embedder-Policy', 'credentialless');
   next();
 });
 
