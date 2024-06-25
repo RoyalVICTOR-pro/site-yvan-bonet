@@ -68,7 +68,6 @@ exports.getLandingPage = (pageName) => {
   return (req, res) => {
     switch (pageName) {
     case 'droit-penal':
-      console.log('Yop');
       res.status(200).render('front/landingPage', {
         title: contentData[pageName].seo_title,
         description: contentData[pageName].seo_description,
@@ -77,7 +76,8 @@ exports.getLandingPage = (pageName) => {
         page_subtitle: contentData[pageName].page_subtitle,
         text_cabinet: contentData['cabinet'].page_text,
         contact_page_title: contentData['contact'].page_title,
-        contact_icon_file_name : contentData['contact'].icon_file_name,
+        contact_icon_file_name: contentData['contact'].icon_file_name,
+        googleMapIframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!..." width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
       });
       break;
     default:

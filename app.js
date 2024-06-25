@@ -43,7 +43,15 @@ app.set('views', path.join(__dirname, 'src/views/'));
 // Serving static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+      'frame-src': ['\'self\'', 'https://www.google.com'],
+      'script-src': ['\'self\'', 'https://maps.googleapis.com']
+    },
+  },
+}));
 
 app.use((req, res, next) => {
   const nonce = crypto.randomBytes(16).toString('hex');
