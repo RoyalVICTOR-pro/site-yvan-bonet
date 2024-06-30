@@ -6,6 +6,7 @@ const presseController = require('../controllers/front/presseController');
 const router = express.Router();
 
 router.use(frontMainController.isCookiesAccepted);
+router.use(frontMainController.contentPolicySecurityMiddleware);
 router.use(frontMainController.googleAnalyticsMiddleware);
 router.get('/', frontMainController.getHomePage);
 // router.get('/domaine-intervention/:slug', viewsController.getTour);

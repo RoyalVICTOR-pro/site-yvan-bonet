@@ -2,7 +2,6 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const rateLimit = require('express-rate-limit');
-const helmet = require('helmet');
 const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
@@ -43,41 +42,13 @@ app.set('views', path.join(__dirname, 'src/views/'));
 // Serving static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(helmet({
-  contentSecurityPolicy: {
-    directives: {
-      ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-      'frame-src': ['\'self\'', 'https://www.google.com'],
-      'script-src': ['\'self\'', 'https://maps.googleapis.com', '\'unsafe-eval\''],
-      'style-src': ['\'self\'', 'https://fonts.googleapis.com', '\'unsafe-inline\''],
-      'font-src': ['\'self\'', 'https://fonts.gstatic.com'],
-      'img-src': ['\'self\'', 'https://www.google.com', 'https://maps.gstatic.com', 'https://maps.googleapis.com']
-    },
-  },
-}));
-
 app.use((req, res, next) => {
   const nonce = crypto.randomBytes(16).toString('hex');
   req.nonce = nonce;
+  res.locals.nonce = nonce;
 
-  res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
-  res.setHeader('Cross-Origin-Embedder-Policy', 'credentialless');
   next();
 });
-
-
-/* 
-app.use(helmet());
-
-
-app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      scriptSrc: ['\'self\'', 'https://static.elfsight.com'],
-      imgSrc: ['\'self\'', 'www.googletagmanager.com'],
-    },
-  })
-); */
 
 // Developping logging
 if (process.env.NODE_ENV === 'development') {

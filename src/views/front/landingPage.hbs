@@ -69,10 +69,10 @@
   <p>{{{ page_text }}} </p>
 </section>
 {{> sectionUrgencePenale }}
-{{!-- <section class="domaines">
-  <h2>Ce que nos clients disent de nous</h2>
-<div class="elfsight-app-60010a3c-6606-41d2-bb5d-639019a4363d" data-elfsight-app-lazy></div>
-</section> --}}
+<section class="domaines">
+  <h2 class="no-bottom-border">Ce que nos clients disent de nous</h2>
+<div class="elfsight-app-60010a3c-6606-41d2-bb5d-639019a4363d avis_clients" data-elfsight-app-lazy></div>
+</section>
 <section class="main_internal_page_bandeau">
   <img src="/img/{{ contact_icon_file_name }}" alt="{{ contact_page_title }}" class="main_internal_page_bandeau_icon">  
   <h1 class="main_internal_page_bandeau_title">{{{ contact_page_title }}}</h1>
@@ -97,5 +97,7 @@
 <section class="contact-form-container">
 <div id="app"></div>
 </section>
+<section class="google-map">
 {{{googleMapIframe}}}
+</section>
 {{> sectionConfiance }}

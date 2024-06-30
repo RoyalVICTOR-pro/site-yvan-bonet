@@ -1,0 +1,22 @@
+.avis_clients{
+  margin: 5vh;
+}
+
+.domaines h2.no-bottom-border{
+  border-bottom: none;
+}
+
+.google-map{
+  overflow:hidden;
+  padding-bottom:56.25%;  /* Ratio 16:9 */
+  position:relative;
+  height:0;
+}
+
+.google-map iframe {
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
+}

@@ -77,7 +77,7 @@ exports.getLandingPage = (pageName) => {
         text_cabinet: contentData['cabinet'].page_text,
         contact_page_title: contentData['contact'].page_title,
         contact_icon_file_name: contentData['contact'].icon_file_name,
-        googleMapIframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!..." width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+        googleMapIframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2628.483993660073!2d2.4583932767462913!3d48.791740671323176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e60d63075cfc21%3A0xf507f2d05d0125e6!2sYvan%20Bonet%20-%20Avocat%20en%20Droit%20P%C3%A9nal%20%C3%A0%20Vincennes%20(94)%20-%20Cr%C3%A9teil%20(94)!5e0!3m2!1sfr!2sde!4v1718087475968!5m2!1sfr!2sde" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
       });
       break;
     default:
@@ -107,15 +107,17 @@ exports.declineCookies = (req, res) => {
   res.redirect(req.headers.referer || '/');
 };
 
+exports.contentPolicySecurityMiddleware = (req, res, next) => {
+  const nonce = req.nonce; // Récupérez le nonce attaché à la requête
+  res.locals.nonce = nonce; 
+  res.setHeader('Content-Security-Policy', `script-src 'self' 'nonce-${nonce}' https://static.elfsight.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com https://bonetavocat.fr https://*.googleusercontent.com ; font-src 'self' https://fonts.gstatic.com;`);
+  next();
+};
+
 exports.googleAnalyticsMiddleware = (req, res, next) => {
   // Vérifier si les cookies ont été acceptés
   const cookiesAccepted = req.session.cookiesAccepted || req.cookies.cookiesAccepted;
-  
-  const nonce = req.nonce; // Récupérez le nonce attaché à la requête
-  res.setHeader('Content-Security-Policy', `script-src 'self' 'nonce-${nonce}'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com https://bonetavocat.fr; font-src 'self' https://fonts.gstatic.com;`);
-
-  // res.locals.nonce = nonce;
-
+ 
   // Activer le suivi de Google Analytics si les cookies sont acceptés
   if (cookiesAccepted) {
     res.locals.showGoogleAnalytics = true; // Variable pour activer le code de suivi dans la vue
@@ -123,8 +125,8 @@ exports.googleAnalyticsMiddleware = (req, res, next) => {
 
     // Code de suivi de Google Analytics
     res.locals.googleAnalyticsCode = `
-      <script async src="https://www.googletagmanager.com/gtag/js?id=${res.locals.googleAnalyticsTrackingId}" nonce="${nonce}"></script>
-      <script nonce="${nonce}">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=${res.locals.googleAnalyticsTrackingId}" nonce="${req.nonce}"></script>
+      <script nonce="${req.nonce}">
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
