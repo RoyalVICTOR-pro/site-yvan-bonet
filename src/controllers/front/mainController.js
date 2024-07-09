@@ -131,6 +131,7 @@ exports.googleAnalyticsMiddleware = (req, res, next) => {
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', '${res.locals.googleAnalyticsTrackingId}');
+        gtag('config', 'AW-16614052928’);
       </script>
     `;
   } else {
