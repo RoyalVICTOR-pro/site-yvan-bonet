@@ -68,6 +68,7 @@ exports.getLandingPage = (pageName) => {
   return (req, res) => {
     switch (pageName) {
     case 'droit-penal':
+    case 'meurtre-assassinat':
       res.status(200).render('front/landingPage', {
         title: contentData[pageName].seo_title,
         description: contentData[pageName].seo_description,

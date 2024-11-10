@@ -14,6 +14,11 @@ const routes = [
     component: ContactForm,
   },
   {
+    path: '/avocat-meurtre-assassinat-creteil-vincennes-94',
+    name: 'landingPage',
+    component: ContactForm,
+  },
+  {
     path: '/confirmation',
     name: 'contactConfirm',
     component: ContactConfirm,

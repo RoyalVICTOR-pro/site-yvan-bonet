@@ -38,5 +38,6 @@ il faut aussi ajouter une route dans le fichier src\views\js\vue-contact-form\sr
 Il faut ensuite faire un npm run webpack pour compiler le fichier.
 */
 router.get('/avocat-droit-penal-vincennes-creteil', frontMainController.getLandingPage('droit-penal'));
+router.get('/avocat-meurtre-assassinat-creteil-vincennes-94', frontMainController.getLandingPage('meurtre-assassinat'));
 
 module.exports = router;
