@@ -2,6 +2,14 @@
   margin: 5vh;
 }
 
+.domaines_white{
+  background-color: $color-white;
+}
+
+.domaines_white h2{
+  color: $color-black;
+}
+
 .domaines h2.no-bottom-border{
   border-bottom: none;
 }
@@ -11,6 +19,7 @@
   padding-bottom:56.25%;  /* Ratio 16:9 */
   position:relative;
   height:0;
+  background-color: $color-white;
 }
 
 .google-map iframe {

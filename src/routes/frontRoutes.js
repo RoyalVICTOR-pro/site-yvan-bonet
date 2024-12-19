@@ -37,7 +37,9 @@ Quand une nouvelle page est ajoutée ici, comme il y a un formulaire de contact 
 il faut aussi ajouter une route dans le fichier src\views\js\vue-contact-form\src\router\index.js
 Il faut ensuite faire un npm run webpack pour compiler le fichier.
 */
-router.get('/avocat-droit-penal-vincennes-creteil', frontMainController.getLandingPage('droit-penal'));
-router.get('/avocat-meurtre-assassinat-creteil-vincennes-94', frontMainController.getLandingPage('meurtre-assassinat'));
+router.get('/avocat-droit-penal', frontMainController.getLandingPage('droit-penal'));
+router.get('/avocat-droit-penal-vincennes-creteil', frontMainController.getLandingPage('droit-penal-vincennes-creteil'));
+router.get('/avocat-meurtre-assassinat', frontMainController.getLandingPage('meurtre-assassinat'));
+router.get('/avocat-meurtre-assassinat-creteil-vincennes-94', frontMainController.getLandingPage('meurtre-assassinat-creteil-vincennnes'));
 
 module.exports = router;

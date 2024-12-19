@@ -661,6 +661,12 @@ body {
 .avis_clients {
   margin: 5vh; }
 
+.domaines_white {
+  background-color: #FFF; }
+
+.domaines_white h2 {
+  color: #000; }
+
 .domaines h2.no-bottom-border {
   border-bottom: none; }
 
@@ -669,7 +675,8 @@ body {
   padding-bottom: 56.25%;
   /* Ratio 16:9 */
   position: relative;
-  height: 0; }
+  height: 0;
+  background-color: #FFF; }
 
 .google-map iframe {
   left: 0;
