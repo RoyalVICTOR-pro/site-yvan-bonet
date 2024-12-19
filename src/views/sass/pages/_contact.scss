@@ -28,12 +28,11 @@
   align-items: center;
   padding: 0 5rem;
   text-align: left;
-  font-size: 1.8rem;
+  font-size: 2rem;
   width: 90%;
 
   @include respond(tab-port) {
     flex-direction: column;
-    font-size: 1.6rem;
     padding: 0 1rem;
   }
 
@@ -60,17 +59,18 @@
   .email {
     width: 100%;
     display: flex;
+    color: $color-black;
   }
 
   .footer-text-link {
     text-decoration: none;
-    color: $color-grey-dark;
+    color: $color-black;
   }
 }
 
 .confirmation_container {
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 2rem;
 
   h2 {
     font-size: 2.4rem;
@@ -82,14 +82,14 @@
       text-decoration: none;
       color: inherit;
       font-weight: 300;
-      font-size: 1.6rem;
+      font-size: 2rem;
     }
     &:hover,
     &:active {
       color: inherit;
       text-decoration: underline;
       font-weight: 600;
-      font-size: 1.6rem;
+      font-size: 2rem;
     }
   }
 }

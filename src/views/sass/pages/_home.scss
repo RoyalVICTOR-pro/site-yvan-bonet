@@ -9,14 +9,17 @@
   flex-direction: column;
 
   &_title {
+    font-family: 'DMSerifDisplay';
     color: $color-primary;
-    font-size: 5rem;
+    font-size: 9rem;
     font-weight: 500;
+    line-height: 0.9;
     text-align: center;
     margin-bottom: 20vh;
 
-    @include respond(tab-port) {
-      font-size: 4rem;
+
+    &_sub {
+      font-size: 5rem;
     }
   }
 
@@ -33,6 +36,7 @@
   margin: 0 auto;
   padding: 100px 20px;
   flex-direction: row;
+  gap: 5rem;
   justify-content: center;
 
   @include respond(phone) {
@@ -46,6 +50,7 @@
     margin-right: 40px;
     width: 40%;
 
+
     @include respond(phone) {
       margin-right: 0;
       width: 100%;
@@ -53,6 +58,7 @@
 
     img {
       width: 100%;
+      border-radius: 5%;
     }
   }
 
@@ -71,19 +77,28 @@
 
 .presentation_subtitle {
   font-weight: 600;
-  font-size: 4rem;
+  font-size: 6rem;
   margin-bottom: 3vh;
+  font-family: 'DMSerifDisplay';
 
-  @include respond(phone) {
-    font-size: 3rem;
-    margin-top: 3vh;
+  @include respond(tab-port) {
+    font-size: 5rem;
+  }
+}
+
+.arrow {
+  fill: #FFDD67;
+
+  &:hover {
+    fill: #FFFFFF;
   }
 }
 
 .presentation_text {
-  font-size: 18px;
+  font-size: 2rem;
   margin-bottom: 2vw;
   padding-right: 20px;
+  color: $color-black;
 
   @include respond(tab-land) {
     font-size: 14px;
@@ -95,42 +110,54 @@
 
 .cta {
   width: 100%;
-  font-weight: 300;
-  font-size: 2.8rem;
+  font-size: 4rem;
+  font-family: 'DMSerifDisplay';
   text-align: center;
   display: block;
-  border-top: 1px solid $color-grey-light-2;
-  border-bottom: 1px solid $color-grey-light-2;
   padding: 5vh 0;
+  background-color: $color-primary;
+  color: $color-black;
 
   @include respond(tab-port) {
-    font-size: 2.4rem;
+    font-size: 3.5rem;
   }
 }
 
 .cta a {
   text-decoration: none;
-  font-weight: 600;
-  color: $color-grey-dark;
   display: inline-block;
-  background-color: $color-primary;
+  background-color: $color-white;
+  color: $color-black;
   padding: 2vh 2vw;
   margin: 1vw;
+  border-radius: 8px;
+  font-family: 'Poppins';
+  font-weight: 700;
+
+  &:hover {
+    background-color: $color-black;
+    color: $color-white;
+  }
 }
+
+
 
 .cta-gras {
   font-weight: 600;
 }
 
+.domaines {
+  background-color: $color-black;
+}
+
 .domaines h2 {
   width: 100%;
-  font-weight: 300;
-  font-size: 3.6rem;
+  font-family: 'DMSerifDisplay';
+  color: $color-white;  
+  font-size: 5rem;
   text-align: center;
   display: block;
-  border-top: 1px solid $color-grey-light-2;
-  border-bottom: 1px solid $color-grey-light-2;
-  padding: 10vh 0;
+  padding: 10vh 0 5vh 0;
 
   @include respond(phone) {
     padding: 6vh 1vw;
@@ -143,41 +170,47 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 5vh 0;
+  padding-bottom: 10vh;
   max-width: 1440px;
   margin: 0 auto;
+
+  @include respond(tab-port) {
+    padding-bottom: 1vh;
+  }
 }
 
 .domain_card {
   &:link,
   &:visited {
     text-decoration: none;
-    color: $color-grey-dark;
+    color: $color-white;
     font-weight: 300;
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
   &:hover,
   &:active {
-    color: $color-grey-dark;
+    color: $color-black;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.6rem;
+    font-size: 2rem;
     background-color: $color-primary;
   }
 
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 280px;
+  width: 20%;
   height: 330px;
   padding: 20px 10px;
   align-items: center;
+  gap:3rem;
 
   @include respond(tab-port) {
     &:not(:last-child) {
       border-bottom: 1px solid $color-grey-light;
     }
     margin-bottom: 10px;
+    width: 90%;
   }
 
   &_icon_container {
@@ -200,13 +233,12 @@
   }
 
   &_text {
-    height: 100%;
     align-content: center;
     display: flex;
     flex-wrap: wrap;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0;
+    // flex-grow: 1;
+    // flex-shrink: 1;
+    // flex-basis: 0;
     @include respond(tab-port) {
       font-size: 2.5rem;
     }
@@ -216,7 +248,7 @@
       text-decoration: none;
       color: $color-grey-dark;
       font-weight: 300;
-      font-size: 1.6rem;
+      font-size: 2rem;
 
       @include respond(tab-port) {
         font-size: 2.5rem;
@@ -227,7 +259,7 @@
       text-decoration: none;
       color: $color-grey-dark;
       font-weight: 600;
-      font-size: 1.6rem;
+      font-size: 2rem;
 
       @include respond(tab-port) {
         font-size: 2.5rem;
@@ -239,14 +271,71 @@
 .confiance {
   width: 100%;
   font-weight: 300;
-  font-size: 2.2rem;
+  font-style: italic;
+  font-size: 2.6rem;
   text-align: center;
   display: block;
-  padding: 10vh 20vw;
+  padding: 10vh 15vw;
   margin: 0;
   background-color: $color-primary;
 
   @include respond(phone) {
     padding: 5vh 5vw;
   }
+}
+
+.button-hover {
+  margin-top: 4rem;
+  position: relative;
+  width: 160px;
+  height: 112px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.svg-off,
+.svg-on {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.stroke-light {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+}
+
+.stroke-dark {
+  fill: none;
+  stroke: #000;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 4px;
+}
+
+.svg-on {
+  opacity: 0;
+}
+
+.button-hover:hover .svg-off {
+  opacity: 0;
+}
+
+.button-hover:hover .svg-on {
+  opacity: 1;
+}
+
+.domain_card:hover .svg-off {
+  opacity: 0;
+}
+
+.domain_card:hover .svg-on {
+  opacity: 1;
 }

@@ -38,6 +38,8 @@ html {
         font-size: 50%; //1rem = 8px => 8px/16px = 50%
     }
 
+    scroll-behavior: smooth;
+
 }
 
 body {
@@ -49,6 +51,7 @@ Ainsi ca sera le box-sizing border-box qui sera appliqué partout.
 */
 box-sizing: border-box; /* box-sizing permet de dire que les paddings et les margins ne doivent pas être ajoutées aux hauteurs et largeurs des éléments cf. "Schéma Box-sizing" sur Notion */
 
+scroll-behavior: smooth;
 
 @include respond(tab-port) {
     padding: 0; 

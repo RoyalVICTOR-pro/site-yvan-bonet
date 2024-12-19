@@ -1,11 +1,18 @@
 @font-face {
-  font-family: 'Trajan';
-  src: local('Trajan Pro 3 Semi Bold'), local('Trajan-Pro-3-Semi-Bold'),
-    url('./fonts/TrajanPro3SemiBold.woff2') format('woff2'),
-    url('./fonts/TrajanPro3SemiBold.woff') format('woff'),
-    url('./fonts/TrajanPro3SemiBold.ttf') format('truetype');
+  font-family: 'DMSerifDisplay';
+  src: local('DM Serif Display'), local('DM-Serif-Display'),
+    url('./fonts/DMSerifDisplay-Regular.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face { 
+  font-family: 'DMSerifDisplay';
+  src: local('DM Serif Display'), local('DM-Serif-Display'),
+    url('./fonts/DMSerifDisplay-Italic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
   font-display: swap;
 }
 
