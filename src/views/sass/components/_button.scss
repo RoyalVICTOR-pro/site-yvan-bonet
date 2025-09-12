@@ -90,10 +90,12 @@
 .btn-text {
   &:link,
   &:visited {
-    background-color: $color-primary;
+    background-color: $color-white;
+    border-radius: 8px;
+    border: 0.3rem solid $color-black;
     font-size: 1.8rem;
     font-weight: 500;
-    color: $color-grey-dark;
+    color: $color-black;
     display: inline-block;
     text-decoration: none;
     padding: 2vh 2vw;
@@ -101,8 +103,8 @@
   }
 
   &:hover {
-    background-color: $color-primary;
-    color: $color-grey-dark;
+    background-color: $color-black;
+    color: $color-white;
     /* box-shadow: 0 1rem 2rem rgba($color-black,.15); */
   }
 
