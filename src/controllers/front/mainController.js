@@ -113,7 +113,7 @@ exports.declineCookies = (req, res) => {
 exports.contentPolicySecurityMiddleware = (req, res, next) => {
   const nonce = req.nonce; // Récupérez le nonce attaché à la requête
   res.locals.nonce = nonce; 
-  res.setHeader('Content-Security-Policy', `script-src 'self' 'nonce-${nonce}' https://static.elfsight.com https://*.elfsightcdn.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com https://bonetavocat.fr https://*.googleusercontent.com https://*.elfsightcdn.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.elfsight.com https://*.elfsightcdn.com;`);
+  res.setHeader('Content-Security-Policy', `script-src 'self' 'nonce-${nonce}' https://static.elfsight.com https://*.elfsightcdn.com https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com https://www.google.com https://bonetavocat.fr https://*.googleusercontent.com https://*.elfsightcdn.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.elfsight.com https://*.elfsightcdn.com https://*.google-analytics.com https://www.google.com https://*.googletagmanager.com;`);
   next();
 };
 
